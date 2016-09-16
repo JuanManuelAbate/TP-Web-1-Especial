@@ -3,5 +3,6 @@
 
   $c = new CategoriaModel();
   $c->createCategoria("Difusor");
+  $c = "textil";
 
 ?>
