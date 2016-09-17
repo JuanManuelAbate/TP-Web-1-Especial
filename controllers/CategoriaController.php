@@ -17,6 +17,11 @@ class CategoriaController {
     $this->categoriaView->showCategorias($categorias);
   }
 
+  function createCategoria() {
+    print_r($_POST);
+    $this->categoriaModel->createCategoria($_POST['nombreCategoria']);
+  }
+
 }
 
 ?>

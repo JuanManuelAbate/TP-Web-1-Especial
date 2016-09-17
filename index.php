@@ -1,7 +1,21 @@
 <?php
+  require ('config/ConfigApp.php');
   require('controllers/CategoriaController.php');
 
   $categoriaController = new CategoriaController();
-  $categoriaController->getCategorias();
+
+  if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)) {
+    $categoriaController->getCategorias();
+    die();
+  }
+
+  switch ($_REQUEST[ConfigApp::$ACTION]) {
+    case ConfigApp::$ACTION_CATEGORIA_CREAR:
+      $categoriaController->createCategoria();
+      break;
+    default:
+      $categoriaController->getCategorias();
+      break;
+  }
 
 ?>
