@@ -22,6 +22,13 @@ class CategoriaController {
     $this->categoriaModel->createCategoria($_POST['nombreCategoria']);
   }
 
+  function deleteCategoria(){
+    $key = $_GET['id_categoria'];
+    $this->categoriaModel->deleteCategoria($key);
+    $categorias = $this->categoriaModel->getCategorias();
+    $this->categoriaView->showCategorias($categorias);
+  }
+
 }
 
 ?>

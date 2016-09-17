@@ -13,6 +13,10 @@
     case ConfigApp::$ACTION_CATEGORIA_CREAR:
       $categoriaController->createCategoria();
       break;
+      case ConfigApp::$ACTION_CATEGORIA_ELIMINAR:
+          $categoriaController->deleteCategoria();
+        break;
+
     default:
       $categoriaController->getCategorias();
       break;
