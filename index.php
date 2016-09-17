@@ -1,14 +1,7 @@
 <?php
-  require('models/CategoriaModel.php');
-  require('models/ProductoModel.php');
+  require('controllers/CategoriaController.php');
 
-/*
-  $c = new CategoriaModel();
-  $c->createCategoria("Difusor");
-*/
-
-  $p = new ProductoModel();
-  $p->createProducto("Papaya y durazno","250ml", 1);
-
+  $categoriaController = new CategoriaController();
+  $categoriaController->getCategorias();
 
 ?>

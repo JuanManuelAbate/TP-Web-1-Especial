@@ -13,7 +13,6 @@ class CategoriaModel {
 
     $query = $this->db->prepare("select * from categoria");
     $query->execute();
-    print_r($query->fetchAll(PDO::FETCH_ASSOC));
     return $query->fetchAll(PDO::FETCH_ASSOC);
   }
 
