@@ -29,6 +29,15 @@ class CategoriaController {
     $this->categoriaView->showCategorias($categorias);
   }
 
+  function adminCategoria() {
+    $categorias = $this->categoriaModel->getCategorias();
+    $this->categoriaView->adminCategoria($categorias);
+  }
+
+  //MOMENTANEO, LUEGO VER COMO RESOLVER!!!
+  function main() {
+    $this->categoriaView->main();
+  }
 }
 
 ?>

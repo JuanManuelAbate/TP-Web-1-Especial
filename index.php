@@ -5,7 +5,7 @@
   $categoriaController = new CategoriaController();
 
   if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)) {
-    $categoriaController->getCategorias();
+    $categoriaController->main();
     die();
   }
 
@@ -13,12 +13,14 @@
     case ConfigApp::$ACTION_CATEGORIA_CREAR:
       $categoriaController->createCategoria();
       break;
-      case ConfigApp::$ACTION_CATEGORIA_ELIMINAR:
-          $categoriaController->deleteCategoria();
-        break;
-
+    case ConfigApp::$ACTION_CATEGORIA_ELIMINAR:
+      $categoriaController->deleteCategoria();
+      break;
+    case ConfigApp::$ACTION_CATEGORIA_ADMIN:
+      $categoriaController->adminCategoria();
+      break;
     default:
-      $categoriaController->getCategorias();
+      $categoriaController->main();
       break;
   }
 
