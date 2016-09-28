@@ -19,6 +19,11 @@ class CategoriaView {
     $this->smarty->display('adminCategoria.tpl');
   }
 
+  function createCategoria($categoria) {
+    $this->smarty->assign('categoria', $categoria);
+    $this->smarty->display('newCategoria.tpl');
+  }
+
   //MOMENTANEO, LUEGO VER COMO RESOLVER!!!
   function main() {
     $this->smarty->display('main.tpl');

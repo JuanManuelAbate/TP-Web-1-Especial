@@ -18,8 +18,8 @@ class CategoriaController {
   }
 
   function createCategoria() {
-    print_r($_POST);
-    $this->categoriaModel->createCategoria($_POST['nombreCategoria']);
+    $categoria = $this->categoriaModel->createCategoria($_POST['nombreCategoria']);
+    $this->categoriaView->createCategoria($categoria);
   }
 
   function deleteCategoria(){

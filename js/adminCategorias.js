@@ -8,8 +8,8 @@ $("document").ready(function(){
 
   $("body").on("click", "#createCategoria", function() {
     event.preventDefault();
-    $.post("index.php?action=categoria_crear", $("#newCategoriaForm").serialize(), function() {
-      
+    $.post("index.php?action=categoria_crear", $("#newCategoriaForm").serialize(), function(data) {
+      $("#tableCategorias").append(data);
     });
   });
 

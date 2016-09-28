@@ -20,6 +20,10 @@ class CategoriaModel {
 
     $query = $this->db->prepare("insert into categoria(nombre) values(?)");
     $query->execute(array($nombreCategoria));
+    $lastId = $this->db->lastInsertId();
+    $query = $this->db->prepare("select * from categoria where id_categoria=?");
+    $query->execute(array($lastId));
+    return $query->fetchAll(PDO::FETCH_ASSOC);
   }
 
   function deleteCategoria($idCategoria) {
