@@ -4,6 +4,8 @@
 
   $categoriaController = new CategoriaController();
 
+  echo "testeando branches";
+
   if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)) {
     $categoriaController->main();
     die();
