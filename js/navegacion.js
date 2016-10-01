@@ -1,5 +1,7 @@
-$(document).ready(function () {
-  $(".navItem").click(render);
+$("document").ready(function () {
+  render();
+  $("#logo").on("click", render);
+  $("#home").on("click", render);
 });
 
 function render() {
@@ -7,9 +9,9 @@ function render() {
     url: "queEsAp.html",
     method: "GET",
     dataType: "html",
-    success: function (data) {
+    success: function(data) {
       $("#mainContent").html(data);
-    }
+    },
     error: function () {
       alert("Ha ocurrido un error, intente mas tarde");
     }

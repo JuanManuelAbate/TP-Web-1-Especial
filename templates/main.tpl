@@ -3,13 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos propios -->
     <link rel="stylesheet" href="css/estilo.css" media="screen" title="no title">
 
     <title></title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Estilos propios -->
+
 
   </head>
 
@@ -27,11 +28,11 @@
         <div class="collapse navbar-collapse" id="navigation">
           <ul class="nav navbar-nav">
             <li><a class="navbar-brand" href="#">
-              <img alt="Brand" src="images/logo.png" >
+              <img alt="Brand" src="images/logo.png" id="logo">
             </a></li>
-            <li class="navItem" name="home"><a href="#">Que es ap?</a></li>
-            <li class="navItem" name="home"><a id="adminCategorias" href="#">Categorias</a></li>
-            <li class="navItem" name="home"><a idhref="#">Nuestros Productos</a></li>
+            <li class="navList" name="home"><a id="home" href="#" >Que es ap?</a></li>
+            <li class="navList" name="categorias"><a id="adminCategorias" href="#">Categorias</a></li>
+            <li class="navList" name="productos"><a id="productos" href="#">Nuestros Productos</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
     </nav>
@@ -39,7 +40,7 @@
     <!-- Seccion principal donde se injecta contenido -->
     <div class="container">
       <div class="row">
-        <div class="col-md-4 col-md-offset-2">
+        <div class="col-md-8 col-md-offset-2">
           <section id="mainContent">
           </section>
         </div>
@@ -57,5 +58,6 @@
     <!-- JS propio -->
     <!-- Categoria Admin -->
     <script src="js/adminCategorias.js"></script>
+    <script src="js/navegacion.js"></script>
   </body>
 </html>
