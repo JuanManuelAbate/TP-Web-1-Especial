@@ -14,9 +14,11 @@ nav {
 .quienes {
   padding: 10px 10px 10px 10px;
   font-size: 19px;
-  background-color:rgba(192,192,192,0.5);
+  background-color:#f8f8f8;
   border-radius: 20px;
   margin-top: 30px;
+  color: #777;
+  box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 p {
@@ -31,5 +33,4 @@ p.tienda {
 
 .navList {
   font-size: 18px;
-  
 }
