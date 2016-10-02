@@ -19,6 +19,9 @@
     case ConfigApp::$ACTION_CATEGORIA_ADMIN:
       $categoriaController->adminCategoria();
       break;
+    case ConfigApp::$ACTION_CATEGORIA_MODIFICAR:
+      $categoriaController->updateCategoria();
+      break;
     default:
       $categoriaController->main();
       break;
