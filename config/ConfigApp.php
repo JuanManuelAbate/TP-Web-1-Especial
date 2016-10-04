@@ -4,5 +4,6 @@
     public static $ACTION_CATEGORIA_CREAR = 'categoria_crear';
     public static $ACTION_CATEGORIA_ELIMINAR = 'categoria_eliminar';
     public static $ACTION_CATEGORIA_ADMIN = 'categoria_admin';
+    public static $ACTION_CATEGORIA_MODIFICAR = 'categoria_modificar';
   }
 ?>

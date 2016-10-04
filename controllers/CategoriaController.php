@@ -23,15 +23,16 @@ class CategoriaController {
   }
 
   function deleteCategoria(){
-    $key = $_GET['id_categoria'];
-    $this->categoriaModel->deleteCategoria($key);
-    $categorias = $this->categoriaModel->getCategorias();
-    $this->categoriaView->showCategorias($categorias);
+    $this->categoriaModel->deleteCategoria($_POST['id_categoria']);
   }
 
   function adminCategoria() {
     $categorias = $this->categoriaModel->getCategorias();
     $this->categoriaView->adminCategoria($categorias);
+  }
+
+  function updateCategoria() {
+    $this->categoriaModel->updateCategoria($_POST['a'],$_POST['b']);
   }
 
   //MOMENTANEO, LUEGO VER COMO RESOLVER!!!
