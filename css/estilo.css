@@ -1,0 +1,36 @@
+body {
+  background-image: url(../images/top5.png);
+}
+
+nav {
+  margin-top: 20px;
+}
+
+.navItem {
+  padding-right: 20px;
+  padding-left: 15px;
+}
+
+.quienes {
+  padding: 10px 10px 10px 10px;
+  font-size: 19px;
+  background-color:#f8f8f8;
+  border-radius: 20px;
+  margin-top: 30px;
+  color: #777;
+  box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+p {
+  padding: 10px;
+  text-align: justify;
+}
+
+p.tienda {
+  text-align: center;
+  font-weight: bold;
+}
+
+.navList {
+  font-size: 18px;
+}
