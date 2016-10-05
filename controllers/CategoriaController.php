@@ -1,6 +1,6 @@
 <?php
-require('models/CategoriaModel.php');
-require('views/CategoriaView.php');
+require_once('models/CategoriaModel.php');
+require_once('views/CategoriaView.php');
 
 class CategoriaController {
 
