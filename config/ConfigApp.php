@@ -6,5 +6,6 @@
     public static $ACTION_CATEGORIA_ADMIN = 'categoria_admin';
     public static $ACTION_CATEGORIA_MODIFICAR = 'categoria_modificar';
     public static $ACTION_PRODUCTO_ADMIN = 'producto_admin';
+    public static $ACTION_PRODUCTO_CREAR = 'producto_crear';
   }
 ?>

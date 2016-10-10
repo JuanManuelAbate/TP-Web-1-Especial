@@ -18,5 +18,9 @@ class ProductoController {
     $this->productoView->adminProducto($this->categoriaModel->getCategorias());
   }
 
+  function createProducto() {
+    $this->productoModel->createProducto($_POST['nombreProducto'], $_POST['descripcionProducto'], $_POST['categoriaProducto'],$_FILES['imagenesProducto']);
+  }
+
 }
 ?>

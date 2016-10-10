@@ -27,6 +27,9 @@
     case ConfigApp::$ACTION_PRODUCTO_ADMIN:
       $productoController->adminProducto();
       break;
+    case ConfigApp::$ACTION_PRODUCTO_CREAR:
+      $productoController->createProducto();
+      break;
     default:
       $categoriaController->main();
       break;

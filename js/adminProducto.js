@@ -6,4 +6,17 @@ $("document").ready(function(){
     });
   });
 
+  $(document).on("submit", "#newProductForm", function(){
+    event.preventDefault();
+    formData = new FormData(this);
+    $.ajax({
+      method: "POST",
+      url: "index.php?action=producto_crear",
+      data: formData,
+      contentType: false,
+      cache: false,
+      processData:false,
+    });
+  });
+
 });
