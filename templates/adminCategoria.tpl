@@ -4,16 +4,16 @@
       <thead>
         <th>ID</th>
         <th>Categoria</th>
-        <th>Modificar Categoria</th>
-        <th>Borrar Categoria</th>
+        <th>Editar</th>
+        <th>Borrar</th>
       </thead>
       <tbody id="tableCategorias">
         {foreach from=$categorias item=$categoria}
           <tr data-id={$categoria.id_categoria}>
             <td>{$categoria.id_categoria}</td>
             <td>{$categoria.nombre}</td>
-            <td><button class="btn center-block updateCategoria">Modificar</button></td>
-            <td><button class="btn center-block deleteCategoria">Borrar</button></td>
+            <td><button class="btn center-block updateCategoria"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></td>
+            <td><button class="btn center-block deleteCategoria"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
           </tr>
         {/foreach}
       </tbody>
