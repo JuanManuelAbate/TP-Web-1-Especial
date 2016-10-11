@@ -2,6 +2,7 @@ $("document").ready(function () {
   render();
   $("#logo").on("click", render);
   $("#home").on("click", render);
+  $('.carousel').carousel();
 });
 
 function render() {

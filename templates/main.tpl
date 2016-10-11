@@ -46,9 +46,11 @@
           <section id="mainContent">
           </section>
         </div>
-      </div>
-    </div>
-
+        </div>
+        </div>
+<div class="">
+  {include file='aside.tpl'}
+</div>
     <footer class="container">
 
     </footer>
