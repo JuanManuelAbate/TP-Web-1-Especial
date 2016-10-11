@@ -1,8 +1,10 @@
 <?php
-  require ('config/ConfigApp.php');
-  require('controllers/CategoriaController.php');
+  require_once('config/ConfigApp.php');
+  require_once('controllers/CategoriaController.php');
+  require_once('controllers/ProductoController.php');
 
   $categoriaController = new CategoriaController();
+  $productoController = new ProductoController();
 
   if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)) {
     $categoriaController->main();
@@ -21,6 +23,12 @@
       break;
     case ConfigApp::$ACTION_CATEGORIA_MODIFICAR:
       $categoriaController->updateCategoria();
+      break;
+    case ConfigApp::$ACTION_PRODUCTO_ADMIN:
+      $productoController->adminProducto();
+      break;
+    case ConfigApp::$ACTION_PRODUCTO_CREAR:
+      $productoController->createProducto();
       break;
     default:
       $categoriaController->main();

@@ -31,8 +31,8 @@
               <img alt="Brand" src="images/logo.png" id="logo">
             </a></li>
             <li class="navList" name="home"><a id="home" href="#" >Que es ap?</a></li>
-            <li class="navList" name="categorias"><a id="adminCategorias" href="#">Categorias</a></li>
-            <li class="navList" name="productos"><a id="productos" href="#">Nuestros Productos</a></li>
+            <li class="navList" name="categorias"><a id="adminCategorias" href="#">Admin Categorias</a></li>
+            <li class="navList" name="productos"><a id="adminProductos" href="#">Admin Productos</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
     </nav>
@@ -58,6 +58,9 @@
     <!-- JS propio -->
     <!-- Categoria Admin -->
     <script src="js/adminCategorias.js"></script>
+    <!-- Producto Admin -->
+    <script src="js/adminProducto.js"></script>
+    <!-- Navegacion -->
     <script src="js/navegacion.js"></script>
   </body>
 </html>
