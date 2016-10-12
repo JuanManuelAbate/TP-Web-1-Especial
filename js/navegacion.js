@@ -2,9 +2,11 @@ $("document").ready(function () {
   home();
   $("#logo").on("click", home);
   $("#home").on("click", home);
-  $('.carousel').carousel();
   $("#categorias").on("click", categorias);
-  $(".categorias").on("click", mostrarProductosRelacionados);
+  $("#productos").on("click", productos);
+
+
+//  $(".categorias").on("click", mostrarProductosRelacionados);
 
 });
 
@@ -28,9 +30,16 @@ function home() {
    });
 };
 
+
+ function productos() {
+  $.get("index.php?action=productos", function(data) {
+    $("#mainContent").html(data);
+   });
+};
+/*
 function mostrarProductosRelacionados() {
-
-
-  {id_categoria: $(this).attr("data-idtarea")}
-
-}
+  $.get("index.php?action=productos", {id_categoria: $(this).attr("data-id")}, function(data) {
+    $("#mainContent").html(data);
+   });
+ }
+*/

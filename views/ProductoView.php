@@ -14,6 +14,12 @@ class ProductoView {
     $this->smarty->display('adminProducto.tpl');
   }
 
+  function verProductos($productos,$categorias) {
+    $this->smarty->assign('productos', $productos);
+    $this->smarty->assign('categorias', $categorias);
+    $this->smarty->display('productos.tpl');
+  }
+
 }
 
 ?>
