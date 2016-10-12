@@ -30,6 +30,10 @@
     case ConfigApp::$ACTION_PRODUCTO_CREAR:
       $productoController->createProducto();
       break;
+    case ConfigApp::$ACTION_CATEGORIA:
+      $categoriaController->verCategorias();
+      break;
+
     default:
       $categoriaController->main();
       break;

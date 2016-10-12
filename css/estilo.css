@@ -55,3 +55,16 @@ th {
 .updateCategoria, .deleteCategoria {
   background-color: rgba(173, 241, 7, 0.6);
 }
+
+.categorias>a {
+  background-color:#f8f8f8;
+  border-radius: 10px;
+  color: white;
+  background-color: rgba(85, 0, 131, 0.6);
+  box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2);
+  padding: 40px 10px 40px 10px;
+  margin: 20px;
+  text-align: center;
+  width: 200px;
+  font-size: 20px;
+}

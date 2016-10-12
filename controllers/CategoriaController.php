@@ -35,6 +35,11 @@ class CategoriaController {
     $this->categoriaModel->updateCategoria($_POST['a'],$_POST['b']);
   }
 
+  function verCategorias() {
+    $categorias = $this->categoriaModel->getCategorias();
+    $this->categoriaView->verCategorias($categorias);
+  }
+
   //MOMENTANEO, LUEGO VER COMO RESOLVER!!!
   function main() {
     $this->categoriaView->main();
