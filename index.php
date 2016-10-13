@@ -36,6 +36,8 @@
     case ConfigApp::$ACTION_PRODUCTO:
       $productoController->verProductos();
       break;
+      case ConfigApp::$ACTION_PRODUCTO_CATEGORIA:
+        $productoController->productosConCategoria();
     default:
       $categoriaController->main();
       break;

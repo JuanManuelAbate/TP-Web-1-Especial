@@ -4,6 +4,7 @@ $("document").ready(function () {
   $("#home").on("click", home);
   $("#categorias").on("click", categorias);
   $("#productos").on("click", productos);
+  $(".categorias").on("click", mostrarProductosRelacionados);
 
 
 //  $(".categorias").on("click", mostrarProductosRelacionados);
@@ -30,16 +31,17 @@ function home() {
    });
 };
 
-
  function productos() {
   $.get("index.php?action=productos", function(data) {
     $("#mainContent").html(data);
    });
 };
-/*
+
 function mostrarProductosRelacionados() {
-  $.get("index.php?action=productos", {id_categoria: $(this).attr("data-id")}, function(data) {
+  $.get("index.php?action=producto_categoria", {id_categoria: $(this).attr("data-id")}, function() {
+    var data = productos();
+    
+
     $("#mainContent").html(data);
    });
  }
-*/

@@ -24,8 +24,12 @@ class ProductoController {
 
   function verProductos() {
     $productos = $this->productoModel->getProductos();
-    $categorias = $this->categoriaModel->getCategorias();
-    $this->productoView->verProductos($productos,$categorias);
+    $this->productoView->verProductos($productos);
+  }
+
+  function productosConCategoria() {
+    $productos = $this->productoModel->getProductos();
+    $this->productoModel->getProductoConCategoria($productos['fk_id_categoria']);
   }
 
 }

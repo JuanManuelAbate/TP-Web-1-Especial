@@ -9,6 +9,6 @@
     public static $ACTION_PRODUCTO = 'productos';
     public static $ACTION_PRODUCTO_ADMIN = 'producto_admin';
     public static $ACTION_PRODUCTO_CREAR = 'producto_crear';
-
+    public static $ACTION_PRODUCTO_CATEGORIA = 'producto_categoria';
   }
 ?>

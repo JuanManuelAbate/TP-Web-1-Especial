@@ -42,6 +42,11 @@ class ProductoModel {
     $query->execute(array($nombreProducto, $idProducto));
   }
 
+  function getProductoConCategoria($fk_id_categoria) {
+    $query = $this->db->prepare("select * from producto where fk_id_categoria=?");
+    $query->execute(array($fk_id_categoria));
+  }
+
 }
 
 ?>
