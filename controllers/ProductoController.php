@@ -29,7 +29,7 @@ class ProductoController {
 
   function productosConCategoria() {
     $productos = $this->productoModel->getProductos();
-    $this->productoModel->getProductoConCategoria($productos['fk_id_categoria']);
+    var_dump( $this->productoModel->getProductoConCategoria($_GET['id_categoria']));
   }
 
 }

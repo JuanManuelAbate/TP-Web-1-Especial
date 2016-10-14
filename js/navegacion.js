@@ -4,10 +4,6 @@ $("document").ready(function () {
   $("#home").on("click", home);
   $("#categorias").on("click", categorias);
   $("#productos").on("click", productos);
-  $(".categorias").on("click", mostrarProductosRelacionados);
-
-
-//  $(".categorias").on("click", mostrarProductosRelacionados);
 
 });
 
@@ -27,6 +23,7 @@ function home() {
 
  function categorias() {
   $.get("index.php?action=categorias", function(data) {
+    $("#btncategorias").on("click", mostrarProductosRelacionados);
     $("#mainContent").html(data);
    });
 };
@@ -38,10 +35,8 @@ function home() {
 };
 
 function mostrarProductosRelacionados() {
-  $.get("index.php?action=producto_categoria", {id_categoria: $(this).attr("data-id")}, function() {
-    var data = productos();
-    
-
+  $.get("index.php",{action:producto_categoria, id_categoria: $(this).attr("data-id")}), function(data) {
+    console.log(data);
     $("#mainContent").html(data);
    });
  }

@@ -42,5 +42,3 @@
       $categoriaController->main();
       break;
   }
-
-?>
