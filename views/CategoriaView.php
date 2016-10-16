@@ -24,6 +24,11 @@ class CategoriaView {
     $this->smarty->display('newCategoria.tpl');
   }
 
+  function verCategorias($categorias) {
+    $this->smarty->assign('categorias',$categorias);
+    $this->smarty->display('categorias.tpl');
+  }
+
   //MOMENTANEO, LUEGO VER COMO RESOLVER!!!
   function main() {
     $this->smarty->display('main.tpl');

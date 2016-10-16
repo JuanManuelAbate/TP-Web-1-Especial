@@ -30,9 +30,20 @@
     case ConfigApp::$ACTION_PRODUCTO_CREAR:
       $productoController->createProducto();
       break;
+    case ConfigApp::$ACTION_CATEGORIA:
+      $categoriaController->verCategorias();
+      break;
+    case ConfigApp::$ACTION_PRODUCTO:
+      $productoController->verProductos();
+      break;
+    case ConfigApp::$ACTION_PRODUCTO_CATEGORIA:
+      $productoController->productosPorCategoria();
+      break;
+/*    case ConfigApp::$ACTION_TRAER_IMAGEN:
+      $productoController->getImagenesProducto();
+      break;
+      */
     default:
       $categoriaController->main();
       break;
   }
-
-?>

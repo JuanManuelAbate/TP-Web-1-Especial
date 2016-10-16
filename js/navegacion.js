@@ -1,10 +1,13 @@
 $("document").ready(function () {
-  render();
-  $("#logo").on("click", render);
-  $("#home").on("click", render);
+  home();
+  $("#logo").on("click", home);
+  $("#home").on("click", home);
+  $("#categorias").on("click", categorias);
+  $("#productos").on("click", productos);
+
 });
 
-function render() {
+function home() {
   $.ajax({
     url: "queEsAp.html",
     method: "GET",
@@ -17,3 +20,26 @@ function render() {
     }
   })
 }
+
+ function categorias() {
+  $.get("index.php?action=categorias", function(data) {
+    $("#mainContent").html(data);
+    $(".btnCategoria").on("click", mostrarProductosRelacionados);
+   });
+};
+
+ function productos() {
+  $.get("index.php?action=productos", function(data) {
+    $("#mainContent").html(data);
+   });
+};
+
+function mostrarProductosRelacionados() {
+  $.get("index.php", {
+    action: "producto_categoria",
+    id_categoria: $(this).attr("data-id")
+  }).done(function (data) {
+    console.log(data);
+    $("#mainContent").html(data);
+  });
+ }

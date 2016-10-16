@@ -6,10 +6,12 @@ class CategoriaController {
 
   private $categoriaModel;
   private $categoriaView;
+  private $productoModel;
 
   function __construct() {
     $this->categoriaModel = new CategoriaModel();
     $this->categoriaView = new CategoriaView();
+    $this->productoModel = new ProductoModel();
   }
 
   function getCategorias() {
@@ -33,6 +35,15 @@ class CategoriaController {
 
   function updateCategoria() {
     $this->categoriaModel->updateCategoria($_POST['a'],$_POST['b']);
+  }
+
+  function verCategorias() {
+    $categorias = $this->categoriaModel->getCategorias();
+    $this->categoriaView->verCategorias($categorias);
+  }
+
+  function verCategoriasConProductos() {
+    
   }
 
   //MOMENTANEO, LUEGO VER COMO RESOLVER!!!

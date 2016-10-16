@@ -22,5 +22,20 @@ class ProductoController {
     $this->productoModel->createProducto($_POST['nombreProducto'], $_POST['descripcionProducto'], $_POST['categoriaProducto'],$_FILES['imagenesProducto']);
   }
 
+  function verProductos() {
+    $productos = $this->productoModel->getProductos();
+    $this->productoView->verProductos($productos);
+  }
+
+  function productosPorCategoria() {
+    $productos = $this->productoModel->getProductoPorCategoria($_GET['id_categoria']);
+    $this->productoView->verProductoPorCategoria($productos);
+
+  }
+
+  function getImagenesProducto() {
+    $productos = $this->productoModel->getImagenesProducto($_GET['id_producto']);
+    
+  }
+
 }
-?>
