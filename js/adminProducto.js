@@ -16,6 +16,20 @@ $("document").ready(function(){
       contentType: false,
       cache: false,
       processData:false,
+      success: function(data){
+        $("#nombreProducto").val("");
+        $("#descripcionProducto").val("");
+        $("#imagenesProducto").val("");
+        $("#tableProductos").append(data);
+      }
+    });
+  });
+
+  $("body").on("click", ".deleteProducto", function() {
+    event.preventDefault();
+    var rowToDelete = $(this).closest('tr');
+    $.post("index.php?action=producto_eliminar", {id_producto: rowToDelete.attr("data-id")}, function() {
+      rowToDelete.remove();
     });
   });
 

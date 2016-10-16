@@ -39,10 +39,9 @@
     case ConfigApp::$ACTION_PRODUCTO_CATEGORIA:
       $productoController->productosPorCategoria();
       break;
-/*    case ConfigApp::$ACTION_TRAER_IMAGEN:
-      $productoController->getImagenesProducto();
+    case ConfigApp::$ACTION_PRODUCTO_ELIMINAR;
+      $productoController->deleteProducto();
       break;
-      */
     default:
       $categoriaController->main();
       break;

@@ -11,10 +11,13 @@ class ProductoModel {
 
   function getProductos() {
 
-    $query = $this->db->prepare("select * from producto");
+    $query = $this->db->prepare("select producto.*, categoria.nombre as nombre_categoria from producto inner join categoria on producto.fk_id_categoria = categoria.id_categoria");
     $query->execute();
-    return $query->fetchAll(PDO::FETCH_ASSOC);
-
+    $productos = $query->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($productos as $key => $producto) {
+      $productos[$key]['imagenes'] = $this->getImagenesProducto($producto['id_producto']);
+    }
+    return $productos;
   }
 
   function createProducto($nombreProducto, $descripcionProducto, $fk_id_categoria, $imagenesProducto) {
@@ -29,10 +32,23 @@ class ProductoModel {
       $insertImagen = $this->db->prepare("insert into imagen(path,fk_id_producto) VALUES(?,?)");
       $insertImagen->execute(array($path,$id_producto));
     }
+
+    $query = $this->db->prepare("select producto.*, categoria.nombre as nombre_categoria from producto inner join categoria on producto.fk_id_categoria = categoria.id_categoria where id_producto=?");
+    $query->execute(array($id_producto));
+    return $query->fetchAll(PDO::FETCH_ASSOC);
   }
 
   function deleteProducto($idProducto) {
 
+    $query = $this->db->prepare("select * from imagen where fk_id_producto=?");
+    $query->execute(array($idProducto));
+    $imagenesProducto = $query->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($imagenesProducto as $imagen) {
+      unlink($imagen[path]);
+    }
+
+    $query = $this->db->prepare("delete from imagen where fk_id_producto=?");
+    $query->execute(array($idProducto));
     $query = $this->db->prepare("delete from producto where id_producto=?");
     $query->execute(array($idProducto));
   }
@@ -44,22 +60,29 @@ class ProductoModel {
   }
 
   function getProductoPorCategoria($fk_id_categoria) {
-    $query = $this->db->prepare("select * from producto where fk_id_categoria=?");
+    $query = $this->db->prepare("select producto.*, categoria.nombre as nombre_categoria from producto inner join categoria on producto.fk_id_categoria = categoria.id_categoria where producto.fk_id_categoria=?");
     $query->execute(array($fk_id_categoria));
     return  $query->fetchAll(PDO::FETCH_ASSOC);
 
   }
 
-  function getImagenesProducto($id_producto) {
-      $query = $this->db->prepare( "select path from imagen where fk_id_producto=?");
-      $query->execute(array($id_producto));
-      $objeto = $query->fetchAll(PDO::FETCH_ASSOC);
-      $path = $objeto[0]["path"];
+  function getProductoById($id_producto) {
 
-      if(file_exists($path)) {
-        header('Content-Type: images/');
-        readfile($path);
-        exit;
-      }
+    $query = $this->db->prepare("select producto.*, categoria.nombre as nombre_categoria from producto inner join categoria on producto.fk_id_categoria = categoria.id_categoria where producto.id_producto=?");
+    $query->execute(array($id_producto));
+    $productos = $query->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($productos as $key => $producto) {
+      $productos[$key]['imagenes'] = $this->getImagenesProducto($producto['id_producto']);
     }
+    return $productos;
+  }
+
+  function getImagenesProducto($id_producto) {
+    $query = $this->db->prepare( "select * from imagen where fk_id_producto=?");
+    $query->execute(array($id_producto));
+    return $query->fetchAll(PDO::FETCH_ASSOC);
+  }
+
 }
+
+?>
