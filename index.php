@@ -36,8 +36,13 @@
     case ConfigApp::$ACTION_PRODUCTO:
       $productoController->verProductos();
       break;
-      case ConfigApp::$ACTION_PRODUCTO_CATEGORIA:
-        $productoController->productosConCategoria();
+    case ConfigApp::$ACTION_PRODUCTO_CATEGORIA:
+      $productoController->productosPorCategoria();
+      break;
+/*    case ConfigApp::$ACTION_TRAER_IMAGEN:
+      $productoController->getImagenesProducto();
+      break;
+      */
     default:
       $categoriaController->main();
       break;

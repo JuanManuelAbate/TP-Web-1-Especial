@@ -2,10 +2,10 @@
   <div class="col-md-12 tabla">
     <table class="table table-responsive text-center">
       <thead>
-        <th>ID</th>
-        <th>Categoria</th>
-        <th>Editar</th>
-        <th>Borrar</th>
+        <th class="thCenter">ID</th>
+        <th class="thCenter">Categoria</th>
+        <th class="thCenter">Editar</th>
+        <th class="thCenter">Borrar</th>
       </thead>
       <tbody id="tableCategorias">
         {foreach from=$categorias item=$categoria}

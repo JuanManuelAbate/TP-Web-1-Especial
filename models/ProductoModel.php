@@ -14,6 +14,7 @@ class ProductoModel {
     $query = $this->db->prepare("select * from producto");
     $query->execute();
     return $query->fetchAll(PDO::FETCH_ASSOC);
+
   }
 
   function createProducto($nombreProducto, $descripcionProducto, $fk_id_categoria, $imagenesProducto) {
@@ -42,12 +43,23 @@ class ProductoModel {
     $query->execute(array($nombreProducto, $idProducto));
   }
 
-  function getProductoConCategoria($fk_id_categoria) {
+  function getProductoPorCategoria($fk_id_categoria) {
     $query = $this->db->prepare("select * from producto where fk_id_categoria=?");
     $query->execute(array($fk_id_categoria));
-    return $query->fetchAll(PDO::FETCH_ASSOC);
+    return  $query->fetchAll(PDO::FETCH_ASSOC);
+
   }
 
-}
+  function getImagenesProducto($id_producto) {
+      $query = $this->db->prepare( "select path from imagen where fk_id_producto=?");
+      $query->execute(array($id_producto));
+      $objeto = $query->fetchAll(PDO::FETCH_ASSOC);
+      $path = $objeto[0]["path"];
 
-?>
+      if(file_exists($path)) {
+        header('Content-Type: images/');
+        readfile($path);
+        exit;
+      }
+    }
+}

@@ -19,7 +19,7 @@ class ProductoView {
     $this->smarty->display('productos.tpl');
   }
 
-  function verProductoConCategorias($productos) {
+  function verProductoPorCategoria($productos) {
     $this->smarty->assign('productos', $productos);
     $this->smarty->display('productosConCategorias.tpl');
   }

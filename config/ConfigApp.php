@@ -10,5 +10,6 @@
     public static $ACTION_PRODUCTO_ADMIN = 'producto_admin';
     public static $ACTION_PRODUCTO_CREAR = 'producto_crear';
     public static $ACTION_PRODUCTO_CATEGORIA = 'producto_categoria';
+//    public static $ACTION_TRAER_IMAGEN = 'traer_imagen';
+
   }
-?>

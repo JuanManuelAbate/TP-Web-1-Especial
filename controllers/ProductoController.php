@@ -27,10 +27,15 @@ class ProductoController {
     $this->productoView->verProductos($productos);
   }
 
-  function productosConCategoria() {
-    $productos = $this->productoModel->getProductos();
-    var_dump( $this->productoModel->getProductoConCategoria($_GET['id_categoria']));
+  function productosPorCategoria() {
+    $productos = $this->productoModel->getProductoPorCategoria($_GET['id_categoria']);
+    $this->productoView->verProductoPorCategoria($productos);
+
+  }
+
+  function getImagenesProducto() {
+    $productos = $this->productoModel->getImagenesProducto($_GET['id_producto']);
+    
   }
 
 }
-?>

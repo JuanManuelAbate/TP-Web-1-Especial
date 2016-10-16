@@ -37,7 +37,7 @@ ul.nav {
   text-align: right;
 }
 
-th {
+.thCenter {
   text-align: center;
 }
 
@@ -64,11 +64,20 @@ li {
 .productos {
   border-radius: 10px;
   font-size: 20px;
-
+  padding: 20px 40px 40px 40px;
+  box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .productos,.table, .quienes {
     background-color:#f8f8f8;
     color: #777;
     margin-top: 30px;
+}
+
+th {
+  color: #8000a6;
+}
+
+.idCat {
+  text-align: center;
 }
