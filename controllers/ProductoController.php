@@ -15,11 +15,16 @@ class ProductoController {
   }
 
   function adminProducto() {
-    $this->productoView->adminProducto($this->categoriaModel->getCategorias());
+    $this->productoView->adminProducto($this->categoriaModel->getCategorias(),$this->productoModel->getProductos());
   }
 
   function createProducto() {
-    $this->productoModel->createProducto($_POST['nombreProducto'], $_POST['descripcionProducto'], $_POST['categoriaProducto'],$_FILES['imagenesProducto']);
+    $producto = $this->productoModel->createProducto($_POST['nombreProducto'], $_POST['descripcionProducto'], $_POST['categoriaProducto'],$_FILES['imagenesProducto']);
+    $this->productoView->createProducto($producto);
+  }
+
+  function deleteProducto() {
+    $this->productoModel->deleteProducto($_POST['id_producto']);
   }
 
   function verProductos() {
@@ -35,7 +40,7 @@ class ProductoController {
 
   function getImagenesProducto() {
     $productos = $this->productoModel->getImagenesProducto($_GET['id_producto']);
-    
+
   }
 
 }
