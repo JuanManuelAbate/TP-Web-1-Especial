@@ -1,11 +1,15 @@
-
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-12 productos">
-      <ul id="listaProductos">
-        {foreach from=$productos item=$producto}
-          <li>{$producto.nombre|upper}</li>
-          <li><div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <div class="col-md-12 productos" >
+      {foreach from=$productos item=$producto}
+      <ul class="productoImagen">
+
+        <li>{$producto.nombre}</li>
+        <br>
+        <li>
+
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
             <!-- Indicators -->
             <ol class="carousel-indicators">
               <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -14,13 +18,14 @@
             </ol>
 
             <!-- Wrapper for slides -->
+
             <div class="carousel-inner" role="listbox">
+              {foreach from=$producto['imagenes'] key=index item=imagen}
               <div class="item active">
-                <img src="..." alt="...">
+                <img src="{$imagen['path']}" alt="imagenProducto"  class="img-thumbnail" width="800px" height="800px">
               </div>
-              <div class="item">
-                <img src="..." alt="...">
-              </div>
+              {/foreach}
+            </div>
 
             <!-- Controls -->
             <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -31,13 +36,17 @@
               <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
               <span class="sr-only">Next</span>
             </a>
+
           </div>
+
+
+
         </li>
-        <li>Descripcion:</li>
-        <li>{$producto.descripcion}</li>
         <br>
-        {/foreach}
+        <li>{$producto.descripcion}</li>
+
       </ul>
+      {/foreach}
     </div>
   </div>
 </div>

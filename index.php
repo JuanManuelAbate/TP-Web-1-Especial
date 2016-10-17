@@ -42,6 +42,10 @@
     case ConfigApp::$ACTION_PRODUCTO_ELIMINAR;
       $productoController->deleteProducto();
       break;
+    case ConfigApp::$ACTION_PRODUCTO_ID;
+      $productoController->productoById();
+      break;
+
     default:
       $categoriaController->main();
       break;

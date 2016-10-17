@@ -20,15 +20,22 @@ class ProductoView {
     $this->smarty->display('newProducto.tpl');
   }
 
-  function verProductos($productos) {
+  function verProductos($productos, $categorias) {
+    $this->smarty->assign('categorias', $categorias);
     $this->smarty->assign('productos', $productos);
     $this->smarty->display('productos.tpl');
   }
 
   function verProductoPorCategoria($productos) {
     $this->smarty->assign('productos', $productos);
-    $this->smarty->display('productosConCategorias.tpl');
+    $this->smarty->display('listaProductos.tpl');
   }
+
+  function verProductosConImg($productos, $categorias) {
+      $this->smarty->assign('categorias', $categorias);
+      $this->smarty->assign('productos', $productos);
+      $this->smarty->display('detalleProductos.tpl');
+    }
 
 }
 
