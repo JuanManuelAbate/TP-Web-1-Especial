@@ -2,6 +2,9 @@
   <div class="row">
     <div class="col-md-12 productos" >
     <table class="table table-responsive">
+      <div class="">
+        {$productos[0]['nombre_categoria']}
+      </div>
         <thead>
           <th></th>
           <th class="thLeft">Productos</th>

@@ -31,6 +31,7 @@
   function productos() {
     $.get("index.php?action=productos", function(data) {
       $("#mainContent").html(data);
+      $(".verItem").on("click", verItem);
     });
   };
 

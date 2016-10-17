@@ -14,7 +14,7 @@
           {foreach from=$productos item=$producto}
           <tr>
             <td><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></td>
-            <td>{$producto.nombre}</a></td>
+            <td><a href="#" class="verItem" data-id={$producto.id_producto}>{$producto.nombre}</a></td>
             <td>{$producto.descripcion}</td>
             <td>{$producto.nombre_categoria}</td>
 
