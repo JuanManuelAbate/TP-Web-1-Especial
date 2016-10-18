@@ -1,10 +1,14 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-12 productos">
+    <div class="col-xs-6 col-md-12 productos">
       {foreach from=$productos item=$producto}
-      <div class="">
+      <div class="text-center">
+        {$producto.nombre_categoria}
+      </div>
+      <div>
         {$producto.nombre}
       </div>
+
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
@@ -14,7 +18,7 @@
             {else}
             <div class="item">
               {/if}
-              <img src="{$imagen['path']}" alt="imagenProducto"  class="img-thumbnail">
+              <img src="{$imagen['path']}" alt="imagenProducto"  class="img-responsive">
             </div>
             {/foreach}
           </div>

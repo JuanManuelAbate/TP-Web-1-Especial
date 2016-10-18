@@ -2,11 +2,8 @@ body {
   background-image: url(../images/top5.png);
 }
 
-nav {
-  margin: 30px;
-  padding-left: 40px;
-  padding-right: 40px;
-  height: 60px;
+nav, footer {
+  margin: 50px;
 }
 
 .quienes {
@@ -27,6 +24,7 @@ p.tienda {
 
 .navList {
   font-size: 20px;
+  padding: 10px;
 }
 
 .table {
@@ -41,7 +39,7 @@ ul.nav {
   text-align: center;
 }
 
-.updateCategoria, .deleteCategoria {
+.updateCategoria, .deleteCategoria, .deleteProducto, .updateProducto {
   background-color: rgba(173, 241, 7, 0.6);
 }
 
@@ -53,7 +51,7 @@ ul.nav {
   padding: 40px 10px 40px 10px;
   margin: 20px;
   text-align: center;
-  width: 200px;
+  width: 300px;
   font-size: 20px;
 }
 
@@ -66,9 +64,10 @@ li {
   font-size: 20px;
   padding: 20px 40px 40px 40px;
   box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2);
+
 }
 
-.productos,.table, .quienes {
+.productos,.table, .quienes, footer {
     background-color:#f8f8f8;
     color: #777;
     margin-top: 30px;
@@ -85,10 +84,39 @@ th {
 .productoImagen {
   font-size: 20px;
 }
+a>.social {
+  color: #510467 ;
+}
 a {
   color: #777;
 }
+
 a:hover{
   text-decoration: none;
   color: #8000a6;
+}
+
+.carousel-inner> .item> img {
+  width:600px;
+  height:400px;
+  margin:auto;
+}
+#social-fb:hover {
+    color: #3B5998;
+}
+#social-tw:hover {
+    color: #4099FF;
+}
+#social-gp:hover {
+    color: #d34836;
+}
+#social-em:hover {
+    color: #f39c12;
+}
+.icons {
+  margin-left: 250px ;
+}
+footer {
+  border-radius: 10px;
+  margin-top: 70px;
 }
