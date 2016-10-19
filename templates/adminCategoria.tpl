@@ -4,6 +4,29 @@
   </div>
 </div>
 <div class="row">
+  <div class="col-md-6">
+    <form id="newCategoriaForm">
+      <h3 class="text-center">Nueva Categoria</h3>
+      <div class="form-group">
+        <input type="text" name="nombreCategoria" class="form-control" id="nombreCategoria" placeholder="Nombre nueva categoria">
+      </div>
+      <button id="createCategoria" class="btn btn-default center-block">Crear</button>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <form id="updateCategoriaForm">
+      <h3 class="text-center">Modificar Categoria</h3>
+      <div class="form-group" hidden>
+        <input type="text" name="id_categoria_update" placeholder="Id categoria" class="form-control" id="idCategoria">
+      </div>
+      <div class="form-group">
+        <input type="text" name="nombre_categoria_update" class="form-control" id="updateNombreCategoria" placeholder="Nombre a modificar">
+      </div>
+      <button id="saveCategoria" class="btn btn-default center-block">Guardar</button>
+    </form>
+  </div>
+</div>
+<div class="row">
   <div class="col-md-12 tabla">
     <table class="table table-responsive text-center">
       <thead>
@@ -23,29 +46,5 @@
         {/foreach}
       </tbody>
     </table>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-6">
-    <form id="newCategoriaForm">
-      <h3 class="text-center">Nueva Categoria</h3>
-      <div class="form-group">
-
-        <input type="text" name="nombreCategoria" class="form-control" id="nombreCategoria" placeholder="Nombre nueva categoria">
-      </div>
-      <button id="createCategoria" class="btn btn-default center-block">Crear</button>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <form id="updateCategoriaForm">
-      <h3 class="text-center">Modificar Categoria</h3>
-      <div class="form-group">
-        <input type="text" name="a" placeholder="Id categoria" class="form-control" id="idCategoria"  disabled>
-      </div>
-      <div class="form-group">
-        <input type="text" name="b" class="form-control" id="updateNombreCategoria" placeholder="Nombre a modificar">
-      </div>
-      <button id="saveCategoria" class="btn btn-default center-block">Guardar</button>
-    </form>
   </div>
 </div>
