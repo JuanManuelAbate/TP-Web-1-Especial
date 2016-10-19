@@ -3,8 +3,13 @@ $("document").ready(function(){
   $("body").on("click", "#createCategoria", function() {
     event.preventDefault();
     $.post("index.php?action=categoria_crear", $("#newCategoriaForm").serialize(), function(data) {
-      $("#tableCategorias").append(data);
-      $("#nombreCategoria").val("");
+      if (data === "0") {
+        $(".errorAdmin").show();
+      } else {
+        $(".errorAdmin").hide();
+        $("#tableCategorias").append(data);
+        $("#nombreCategoria").val("");
+      }
     });
   });
 
@@ -23,10 +28,10 @@ $("document").ready(function(){
 
   $("body").on("click", "#saveCategoria", function() {
     event.preventDefault();
-    $.post("index.php?action=categoria_modificar", $("#updateCategoriaForm").serialize(), function(data) {
-      $('tr').filter('[data-id="'+$("#idCategoria").val()+'"]').children('td').eq(1).text($("#updateNombreCategoria").val());
-      $("#idCategoria").val("");
-      $("#updateNombreCategoria").val("");
+    $.post("index.php?action=categoria_modificar", $("#updateCategoriaForm").serialize(), function() {
+        $('tr').filter('[data-id="'+$("#idCategoria").val()+'"]').children('td').eq(1).text($("#updateNombreCategoria").val());
+        $("#idCategoria").val("");
+        $("#updateNombreCategoria").val("");
     });
   });
 

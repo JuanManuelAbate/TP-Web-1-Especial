@@ -53,10 +53,18 @@ class ProductoModel {
     $query->execute(array($idProducto));
   }
 
-  function updateProducto($idProducto, $nombreProducto) {
+  function updateProducto($idProducto, $nombreProducto, $descripcionProducto, $categoriaProducto, $imagenesProducto) {
 
-    $query = $this->db->prepare("update producto set nombre=? where id_producto=?");
-    $query->execute(array($nombreProducto, $idProducto));
+    $query = $this->db->prepare("update producto set nombre=?, descripcion=?, fk_id_categoria=? where id_producto=?");
+    $query->execute(array($nombreProducto, $descripcionProducto, $categoriaProducto, $idProducto));
+
+    for ($i=0 ; $i < count($imagenesProducto['size']) ; $i++ ) {
+      $path="images/productos/".uniqid()."_".$imagenesProducto['name'][$i];
+      move_uploaded_file($imagenesProducto['tmp_name'][$i], $path);
+      $insertImagen = $this->db->prepare("insert into imagen(path,fk_id_producto) VALUES(?,?)");
+      $insertImagen->execute(array($path,$idProducto));
+    }
+
   }
 
   function getProductoPorCategoria($fk_id_categoria) {

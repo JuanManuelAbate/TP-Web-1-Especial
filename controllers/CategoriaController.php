@@ -21,7 +21,11 @@ class CategoriaController {
 
   function createCategoria() {
     $categoria = $this->categoriaModel->createCategoria($_POST['nombreCategoria']);
-    $this->categoriaView->createCategoria($categoria);
+    if ($categoria != false) {
+        $this->categoriaView->createCategoria($categoria);
+    } else {
+      echo "0";
+    }
   }
 
   function deleteCategoria(){
@@ -34,7 +38,7 @@ class CategoriaController {
   }
 
   function updateCategoria() {
-    $this->categoriaModel->updateCategoria($_POST['a'],$_POST['b']);
+    $this->categoriaModel->updateCategoria($_POST['id_categoria_update'],$_POST['nombre_categoria_update']);
   }
 
   function verCategorias() {
@@ -43,7 +47,7 @@ class CategoriaController {
   }
 
   function verCategoriasConProductos() {
-    
+
   }
 
   //MOMENTANEO, LUEGO VER COMO RESOLVER!!!
