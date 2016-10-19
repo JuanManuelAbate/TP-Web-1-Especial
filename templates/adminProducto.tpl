@@ -3,11 +3,9 @@
     <form id="newProductForm">
       <h2 class="text-center">Nuevo Producto</h2>
       <div class="form-group">
-        <label for="nombreProducto">Nombre</label>
         <input type="text" name="nombreProducto" class="form-control" id="nombreProducto" placeholder="Nombre nuevo producto" required="true">
       </div>
       <div class="form-group">
-        <label for="descripcionProducto">Descripcion</label>
         <input type="text" name="descripcionProducto" class="form-control" id="descripcionProducto" placeholder="Descripcion nuevo producto" required="true">
       </div>
       <div class="form-group">
@@ -28,14 +26,14 @@
 </div>
 <div class="row">
   <div class="col-md-12">
-    <table class="table table-bordered table-responsive">
+    <table class="table table-responsive text-center">
       <thead>
-        <th>Id</th>
-        <th>Nombre</th>
-        <th>Descripcion</th>
-        <th>Categoria</th>
-        <th>Modificar</th>
-        <th>Borrar</th>
+        <th class="thCenter">ID</th>
+        <th class="thCenter">Nombre</th>
+        <th class="thCenter">Descripcion</th>
+        <th class="thCenter" >Categoria</th>
+        <th class="thCenter">Modificar</th>
+        <th class="thCenter">Borrar</th>
       </thead>
       <tbody id="tableProductos">
         {foreach from=$productos item=$producto}

@@ -86,13 +86,10 @@ th {
   color: #8000a6;
 }
 
-.idCat {
-  text-align: center;
-}
-
 .productoImagen {
   font-size: 20px;
 }
+
 a>.social {
   color: #510467 ;
 }
@@ -111,36 +108,37 @@ a:hover{
   height:400px;
   margin:auto;
 }
+
 #social-fb:hover {
     color: #3B5998;
 }
+
 #social-tw:hover {
     color: #4099FF;
 }
+
 #social-gp:hover {
     color: #d34836;
 }
+
 #social-em:hover {
     color: #f39c12;
 }
+
 .icons {
   margin-left: 250px ;
 }
 
 .formContact {
-  font-size: 20px;
-  font-weight: bold;
-  color: #8000a6;
+  font-size: 15px;
+  color: #5e0577;
   margin-top: 30px;
   padding: 20px;
-  border-style: solid;
-  border-color: #8000a6;
   border-radius: 20px;
-  box-shadow: 10px 10px 15px 15px rgba(0, 0, 0, 0.2);
-  background-color: rgba(249, 249, 249, 0.24);
-}
-legend {
-  font-size: 15px;
+  box-shadow: 10px 10px 15px 15px rgba(0, 0, 0, 0.27);
+  background-color: #f8f8f8;
+  border-style: double;
+  border-width: 6px;
 }
 
 footer {
@@ -150,4 +148,17 @@ footer {
 
 .glyphicon-heart:before {
   color: #e68420;
+}
+
+form {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.btn-default {
+  font-size: 15px;
+  background-color: rgba(173, 241, 7, 0.6);
+  padding: 10px;
 }

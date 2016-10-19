@@ -1,4 +1,5 @@
-<form class="formContact" method="get">
+<form class="formContact" action="form.html" method="get">
+  <h2>Contacto ap®</h2>
   <div class="form-group">
     <input type="text" class="form-control" placeholder="NOMBRE" required="true">
   </div>
@@ -9,16 +10,18 @@
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="EMAIL">
   </div>
   <div class="form-group">
-    <label for="exampleSelect1">¿Que sos de ap?</label>
-    <select class="form-control" id="exampleSelect1">
+    <label for="exampleSelect1">¿Que sos de ap? <select class="form-control" id="exampleSelect1">
       <option>Cliente</option>
       <option>Franquicia</option>
       <option>Revendedora/a</option>
-    </select>
+    </select></label>
+
   </div>
   <div class="form-group">
     <label for="exampleTextarea">Dejanos tu comentario y/o sugerencias!</label>
     <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
   </div>
-  <button type="submit" class="btn btn-default" id="btnSubmit">Enviar consulta!</button>
+    <div class="form-group">
+  <button type="submit" class="btn btn-default" id="btnSubmit">Enviar comentario!</button>
+  </div>
 </form>

@@ -23,9 +23,9 @@
 <div class="row">
   <div class="col-md-6">
     <form id="newCategoriaForm">
-      <h2 class="text-center">Nueva Categoria</h2>
+      <h3 class="text-center">Nueva Categoria</h3>
       <div class="form-group">
-        <label for="nombreCategoria">Nombre</label>
+
         <input type="text" name="nombreCategoria" class="form-control" id="nombreCategoria" placeholder="Nombre nueva categoria">
       </div>
       <button id="createCategoria" class="btn btn-default center-block">Crear</button>
@@ -33,14 +33,12 @@
   </div>
   <div class="col-md-6">
     <form id="updateCategoriaForm">
-      <h2 class="text-center">Modificar Categoria</h2>
+      <h3 class="text-center">Modificar Categoria</h3>
       <div class="form-group">
-        <label for="idCategoria">Id</label>
-        <input type="text" name="a" class="form-control" id="idCategoria" disabled>
+        <input type="text" name="a" placeholder="Id categoria" class="form-control" id="idCategoria"  disabled>
       </div>
       <div class="form-group">
-        <label for="updateNombreCategoria">Nombre</label>
-        <input type="text" name="b" class="form-control" id="updateNombreCategoria">
+        <input type="text" name="b" class="form-control" id="updateNombreCategoria" placeholder="Nombre a modificar">
       </div>
       <button id="saveCategoria" class="btn btn-default center-block">Guardar</button>
     </form>

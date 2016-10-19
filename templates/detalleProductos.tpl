@@ -3,10 +3,9 @@
     <div class="col-xs-6 col-md-12 productos">
       {foreach from=$productos item=$producto}
       <div class="text-center">
-        {$producto.nombre_categoria|capitalize:true}
+        {$producto.nombre_categoria|upper}
       </div>
-      <div>
-        {$producto.nombre}
+      <div>{$producto.nombre|capitalize:true} <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> 
       </div>
 
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -34,7 +33,7 @@
           </a>
         </div>
         <div class="">
-          {$producto.descripcion|capitalize:true}
+          {$producto.descripcion}
         </div>
 
         {/foreach}
