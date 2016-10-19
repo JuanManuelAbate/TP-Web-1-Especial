@@ -29,13 +29,19 @@ class ProductoController {
 
   function verProductos() {
     $productos = $this->productoModel->getProductos();
-    $this->productoView->verProductos($productos);
+    $categorias = $this->categoriaModel->getCategorias();
+    $this->productoView->verProductos($productos, $categorias);
   }
 
   function productosPorCategoria() {
-    $productos = $this->productoModel->getProductoPorCategoria($_GET['id_categoria']);
-    $this->productoView->verProductoPorCategoria($productos);
+    $productosPorCat = $this->productoModel->getProductoPorCategoria($_GET['id_categoria']);
+    $this->productoView->verProductoPorCategoria($productosPorCat);
+  }
 
+  function productoById() {
+    $productos = $this->productoModel->getProductoById($_GET['id_producto']);
+    $categorias = $this->categoriaModel->getCategorias();
+    $this->productoView->verProductosConImg($productos, $categorias);
   }
 
   function getImagenesProducto() {

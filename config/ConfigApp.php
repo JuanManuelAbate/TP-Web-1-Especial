@@ -11,4 +11,5 @@
     public static $ACTION_PRODUCTO_CREAR = 'producto_crear';
     public static $ACTION_PRODUCTO_CATEGORIA = 'producto_categoria';
     public static $ACTION_PRODUCTO_ELIMINAR = 'producto_eliminar';
+    public static $ACTION_PRODUCTO_ID = 'producto_id';
   }

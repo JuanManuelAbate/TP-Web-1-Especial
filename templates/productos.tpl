@@ -8,14 +8,17 @@
           <th class="thLeft">Producto</th>
           <th class="thLeft">Descripcion</th>
           <th class="thLeft">Categoria</th>
+
         </thead>
         <tbody>
           {foreach from=$productos item=$producto}
           <tr>
-            <td><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></td>
-            <td>{$producto.nombre}</td>
+            <td><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></td>
+            <td><a href="#" class="verItem" data-id={$producto.id_producto}>{$producto.nombre|capitalize:true}</a></td>
             <td>{$producto.descripcion}</td>
-            <td class="idCat">{$producto.fk_id_categoria}</td>
+            <td>{$producto.nombre_categoria|capitalize:true}</td>
+
+
           </tr>
           {/foreach}
         </tbody>

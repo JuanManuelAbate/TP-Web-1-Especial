@@ -11,7 +11,7 @@ class ProductoModel {
 
   function getProductos() {
 
-    $query = $this->db->prepare("select producto.*, categoria.nombre as nombre_categoria from producto inner join categoria on producto.fk_id_categoria = categoria.id_categoria");
+    $query = $this->db->prepare("select producto.*, categoria.nombre as nombre_categoria from producto inner join categoria on producto.fk_id_categoria = categoria.id_categoria ORDER BY categoria.nombre ASC");
     $query->execute();
     $productos = $query->fetchAll(PDO::FETCH_ASSOC);
     foreach ($productos as $key => $producto) {
@@ -33,7 +33,7 @@ class ProductoModel {
       $insertImagen->execute(array($path,$id_producto));
     }
 
-    $query = $this->db->prepare("select producto.*, categoria.nombre as nombre_categoria from producto inner join categoria on producto.fk_id_categoria = categoria.id_categoria where id_producto=?");
+    $query = $this->db->prepare("select producto.*, categoria.nombre as nombre_categoria from producto inner join categoria on producto.fk_id_categoria = categoria.id_categoria where id_producto=? ORDER BY categoria.nombre ASC");
     $query->execute(array($id_producto));
     return $query->fetchAll(PDO::FETCH_ASSOC);
   }
@@ -60,7 +60,7 @@ class ProductoModel {
   }
 
   function getProductoPorCategoria($fk_id_categoria) {
-    $query = $this->db->prepare("select producto.*, categoria.nombre as nombre_categoria from producto inner join categoria on producto.fk_id_categoria = categoria.id_categoria where producto.fk_id_categoria=?");
+    $query = $this->db->prepare("select producto.*, categoria.nombre as nombre_categoria from producto inner join categoria on producto.fk_id_categoria = categoria.id_categoria where producto.fk_id_categoria=? ORDER BY categoria.nombre ASC");
     $query->execute(array($fk_id_categoria));
     return  $query->fetchAll(PDO::FETCH_ASSOC);
 
@@ -68,7 +68,7 @@ class ProductoModel {
 
   function getProductoById($id_producto) {
 
-    $query = $this->db->prepare("select producto.*, categoria.nombre as nombre_categoria from producto inner join categoria on producto.fk_id_categoria = categoria.id_categoria where producto.id_producto=?");
+    $query = $this->db->prepare("select producto.*, categoria.nombre as nombre_categoria from producto inner join categoria on producto.fk_id_categoria = categoria.id_categoria where producto.id_producto=? ORDER BY categoria.nombre ASC");
     $query->execute(array($id_producto));
     $productos = $query->fetchAll(PDO::FETCH_ASSOC);
     foreach ($productos as $key => $producto) {
