@@ -45,7 +45,11 @@ $("document").ready(function(){
       cache: false,
       processData:false,
       success: function(data){
-        alert(data);
+        $("#idProducto").val("");
+        $("#updateNombreProducto").val("");
+        $("#updateDescripcionProducto").val("");
+        $("#updateCategoriaProducto").val("");
+        $("#updateImagenesProducto").val("");
       }
     });
   });
