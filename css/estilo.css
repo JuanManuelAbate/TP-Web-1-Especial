@@ -1,5 +1,6 @@
 body {
   background-image: url(../images/top5.png);
+  font-family: sans-serif;
 }
 
 nav, footer {
@@ -7,7 +8,7 @@ nav, footer {
 }
 
 .quienes {
-  padding: 10px 10px 10px 10px;
+  padding: 20px 20px 20px 20px;
   font-size: 19px;
   border-radius: 20px;
 }
@@ -24,15 +25,13 @@ p.tienda {
 
 .navList {
   font-size: 20px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .table {
   border-radius: 10px;
-}
-
-ul.nav {
-  text-align: right;
+  font-size: 18px;
+  padding: 10px;
 }
 
 .thCenter {
@@ -43,34 +42,44 @@ ul.nav {
   background-color: rgba(173, 241, 7, 0.6);
 }
 
+.nombreCategoria {
+  background-color: rgba(85, 0, 131, 0.6);
+  color: white;
+  margin-top: 30px;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
 .categorias>a {
   border-radius: 10px;
   color: white;
-  background-color: rgba(85, 0, 131, 0.6);
-  box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2);
-  padding: 40px 10px 40px 10px;
-  margin: 20px;
+  background-color: rgba(79, 1, 102, 0.73);
+  padding: 40px 20px 40px 20px;
+  margin: 30px;
   text-align: center;
   width: 300px;
   font-size: 20px;
-}
-
-li {
-  list-style-type: none;
 }
 
 .productos {
   border-radius: 10px;
   font-size: 20px;
   padding: 20px 40px 40px 40px;
-  box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2);
 
 }
-
+.productos,.categorias>a,.nombreCategoria {
+  box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2);
+}
 .productos,.table, .quienes, footer {
     background-color:#f8f8f8;
     color: #777;
     margin-top: 30px;
+}
+
+li {
+  list-style-type: none;
 }
 
 th {
@@ -87,6 +96,7 @@ th {
 a>.social {
   color: #510467 ;
 }
+
 a {
   color: #777;
 }
@@ -116,7 +126,28 @@ a:hover{
 .icons {
   margin-left: 250px ;
 }
+
+.formContact {
+  font-size: 20px;
+  font-weight: bold;
+  color: #8000a6;
+  margin-top: 30px;
+  padding: 20px;
+  border-style: solid;
+  border-color: #8000a6;
+  border-radius: 20px;
+  box-shadow: 10px 10px 15px 15px rgba(0, 0, 0, 0.2);
+  background-color: rgba(249, 249, 249, 0.24);
+}
+legend {
+  font-size: 15px;
+}
+
 footer {
   border-radius: 10px;
   margin-top: 70px;
+}
+
+.glyphicon-heart:before {
+  color: #e68420;
 }

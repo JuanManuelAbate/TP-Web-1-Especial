@@ -11,7 +11,7 @@
         {foreach from=$categorias item=$categoria}
           <tr data-id={$categoria.id_categoria}>
             <td>{$categoria.id_categoria}</td>
-            <td>{$categoria.nombre}</td>
+            <td>{$categoria.nombre|capitalize:true}</td>
             <td><button class="btn center-block updateCategoria"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></td>
             <td><button class="btn center-block deleteCategoria"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
           </tr>
@@ -36,7 +36,7 @@
       <h2 class="text-center">Modificar Categoria</h2>
       <div class="form-group">
         <label for="idCategoria">Id</label>
-        <input type="text" name="a" class="form-control" id="idCategoria">
+        <input type="text" name="a" class="form-control" id="idCategoria" disabled>
       </div>
       <div class="form-group">
         <label for="updateNombreCategoria">Nombre</label>

@@ -3,7 +3,7 @@
     <div class="col-xs-6 col-md-12 productos">
       {foreach from=$productos item=$producto}
       <div class="text-center">
-        {$producto.nombre_categoria}
+        {$producto.nombre_categoria|capitalize:true}
       </div>
       <div>
         {$producto.nombre}
@@ -34,7 +34,7 @@
           </a>
         </div>
         <div class="">
-          {$producto.descripcion}
+          {$producto.descripcion|capitalize:true}
         </div>
 
         {/foreach}

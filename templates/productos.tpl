@@ -13,10 +13,10 @@
         <tbody>
           {foreach from=$productos item=$producto}
           <tr>
-            <td><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></td>
-            <td><a href="#" class="verItem" data-id={$producto.id_producto}>{$producto.nombre}</a></td>
+            <td><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></td>
+            <td><a href="#" class="verItem" data-id={$producto.id_producto}>{$producto.nombre|capitalize:true}</a></td>
             <td>{$producto.descripcion}</td>
-            <td>{$producto.nombre_categoria}</td>
+            <td>{$producto.nombre_categoria|capitalize:true}</td>
 
 
           </tr>

@@ -15,13 +15,14 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="navList"><a href="#" id="home">¿ Qué es ap ?</a></li>
+          <li class="navList"><a href="#" id="home">¿Qué es ap?</a></li>
           <li class="navList"><a href="#" id="categorias">Categorias</a></li>
           <li class="navList"><a href="#" id="productos">Productos</a></li>
+          <li class="navList"><a href="#" id="contacto">Contacto</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li class="navList"><a href="#" id="adminProductos">Administrador Productos</a></li>
-          <li class="navList"><a href="#" id="adminCategorias">Administrador Categorias</a></li>
+          <li class="navList"><a href="#" id="adminProductos">Administrador Productos |</a></li>
+          <li class="navList"><a href="#" id="adminCategorias">Administrador Categorias |</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

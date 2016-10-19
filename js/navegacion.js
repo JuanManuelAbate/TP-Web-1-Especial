@@ -2,9 +2,11 @@
     home();
     $("#logo").on("click", home);
     $("#home").on("click", home);
+    $("#contacto").on("click", contacto);
     $("#categorias").on("click", categorias);
     $("#productos").on("click", productos);
-
+    $("#adminCategorias").on("click", adminCategorias);
+    $("#adminProductos").on("click", adminProductos);
   });
 
   function home() {
@@ -18,8 +20,35 @@
       error: function () {
         alert("Ha ocurrido un error, intente mas tarde");
       }
-    })
+    });
   }
+
+    function contacto() {
+      $.ajax({
+        url: "form.html",
+        method: "GET",
+        dataType: "html",
+        success: function(data) {
+          console.log("llego el form");
+          $("#mainContent").html(data);
+        },
+        error: function () {
+          alert("Ha ocurrido un error, intente mas tarde");
+        }
+      });
+    }
+
+    function adminProductos() {
+      $.get("index.php?action=producto_admin", function(data) {
+        $("#mainContent").html(data);
+      });
+    }
+
+    function adminCategorias() {
+      $.get("index.php?action=categoria_admin", function(data) {
+        $("#mainContent").html(data);
+      });
+    }
 
   function categorias() {
     $.get("index.php?action=categorias", function(data) {
