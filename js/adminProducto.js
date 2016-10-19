@@ -27,4 +27,27 @@ $("document").ready(function(){
     });
   });
 
+  $("body").on("click", ".updateProducto", function() {
+    $("#idProducto").val($(this).closest('tr').children('td').eq(0).text());
+    $("#updateNombreProducto").val($(this).closest('tr').children('td').eq(1).text());
+    $("#updateDescripcionProducto").val($(this).closest('tr').children('td').eq(2).text());
+    $("#updateCategoriaProducto").val($(this).closest('tr').children('td').eq(3).attr("data-id-categoria"));
+  });
+
+  $(document).on("submit", "#updateProductForm", function(){
+    event.preventDefault();
+    formData = new FormData(this);
+    $.ajax({
+      method: "POST",
+      url: "index.php?action=producto_modificar",
+      data: formData,
+      contentType: false,
+      cache: false,
+      processData:false,
+      success: function(data){
+        alert(data);
+      }
+    });
+  });
+
 });

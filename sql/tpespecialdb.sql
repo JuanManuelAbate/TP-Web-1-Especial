@@ -4,7 +4,7 @@ USE `tpespecialdb`;
 
 CREATE TABLE `categoria`(
 	`id_categoria` INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-	`nombre` VARCHAR(50) NOT NULL);
+	`nombre` VARCHAR(50) UNIQUE NOT NULL);
 
 CREATE TABLE `producto`(
 	`id_producto` INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,

@@ -46,7 +46,10 @@ class ProductoController {
 
   function getImagenesProducto() {
     $productos = $this->productoModel->getImagenesProducto($_GET['id_producto']);
+  }
 
+  function updateProducto() {
+    $this->productoModel->updateProducto($_POST['updateIdProducto'], $_POST['updateNombreProducto'], $_POST['updateDescripcionProducto'], $_POST['updateCategoriaProducto'], $_FILES['updateImagenesProducto']);
   }
 
 }

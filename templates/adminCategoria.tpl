@@ -1,3 +1,8 @@
+<div class="row errorAdmin" hidden>
+  <div class="col-md-12 bg-danger">
+    <h1>Error: Nombre cateogria duplicado</h1>
+  </div>
+</div>
 <div class="row">
   <div class="col-md-12 tabla">
     <table class="table table-responsive text-center">

@@ -45,6 +45,9 @@
     case ConfigApp::$ACTION_PRODUCTO_ID;
       $productoController->productoById();
       break;
+    case ConfigApp::$ACTION_PRODUCTO_MODIFICAR:
+      $productoController->updateProducto();
+      break;
 
     default:
       $categoriaController->main();
