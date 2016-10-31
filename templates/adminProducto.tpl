@@ -20,7 +20,7 @@
         <label for="imagenesProducto">Imagenes del producto</label>
         <input type="file" name="imagenesProducto[]" id="imagenesProducto" multiple required="true">
       </div>
-      <input type="submit" class="btn btn-default center-block">
+      <input type="submit" class="btn btn-default center-block bold">
     </form>
   </div>
   <div class="col-md-6">
@@ -47,7 +47,7 @@
         <label for="updateImagenesProducto">Imagenes del producto</label>
         <input type="file" name="updateImagenesProducto[]" id="updateImagenesProducto" multiple>
       </div>
-      <input type="submit" class="btn btn-default center-block">
+      <input type="submit" class="btn btn-default center-block bold">
     </form>
   </div>
 </div>

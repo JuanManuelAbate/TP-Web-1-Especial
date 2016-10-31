@@ -157,8 +157,9 @@ form {
   margin-top: 20px;
 }
 
-.btn-default {
+.bold {
   font-size: 15px;
   background-color: rgba(173, 241, 7, 0.6);
   padding: 10px;
+  font-weight: bold;
 }

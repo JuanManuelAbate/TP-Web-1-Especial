@@ -1,28 +1,28 @@
 <div class="row errorAdmin" hidden>
   <div class="col-md-12 bg-danger">
-    <h1>Error: Nombre cateogria duplicado</h1>
+    <h1>Error: Nombre categoria duplicado</h1>
   </div>
 </div>
 <div class="row">
   <div class="col-md-6">
     <form id="newCategoriaForm">
-      <h3 class="text-center">Nueva Categoria</h3>
+      <h2 class="text-center">Nueva Categoria</h2>
       <div class="form-group">
         <input type="text" name="nombreCategoria" class="form-control" id="nombreCategoria" placeholder="Nombre nueva categoria">
       </div>
-      <button id="createCategoria" class="btn btn-default center-block">Crear</button>
+      <button id="createCategoria" class="btn btn-default center-block bold">Crear</button>
     </form>
   </div>
   <div class="col-md-6">
     <form id="updateCategoriaForm">
-      <h3 class="text-center">Modificar Categoria</h3>
+      <h2 class="text-center">Modificar Categoria</h2>
       <div class="form-group" hidden>
         <input type="text" name="id_categoria_update" placeholder="Id categoria" class="form-control" id="idCategoria">
       </div>
       <div class="form-group">
         <input type="text" name="nombre_categoria_update" class="form-control" id="updateNombreCategoria" placeholder="Nombre a modificar">
       </div>
-      <button id="saveCategoria" class="btn btn-default center-block">Guardar</button>
+      <button id="saveCategoria" class="btn btn-default center-block bold">Guardar</button>
     </form>
   </div>
 </div>
