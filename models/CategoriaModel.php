@@ -11,7 +11,7 @@ class CategoriaModel {
 
   function getCategorias() {
 
-    $query = $this->db->prepare("select * from categoria");
+    $query = $this->db->prepare("select * from categoria ORDER BY id_categoria ASC");
     $query->execute();
     return $query->fetchAll(PDO::FETCH_ASSOC);
   }
