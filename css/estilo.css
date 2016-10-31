@@ -1,5 +1,5 @@
 body {
-  background-image: url(../images/top5.png);
+  background-image: url('../images/top5.png');
   font-family: sans-serif;
 }
 
@@ -162,4 +162,10 @@ form {
   background-color: rgba(173, 241, 7, 0.6);
   padding: 10px;
   font-weight: bold;
+}
+
+@media (max-width: 500px) {
+    #logo {
+      width:50px;
+    }
 }
