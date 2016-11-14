@@ -2,6 +2,13 @@
   require_once('config/ConfigApp.php');
   require_once('controllers/CategoriaController.php');
   require_once('controllers/ProductoController.php');
+  require_once('dataBase/DbConnector.php');
+
+  $dbConnector = new DbConnector();
+
+  if (!$dbConnector->dbExists()) {
+    $dbConnector->createDatabase();
+  }
 
   $categoriaController = new CategoriaController();
   $productoController = new ProductoController();
@@ -53,3 +60,5 @@
       $categoriaController->main();
       break;
   }
+
+?>

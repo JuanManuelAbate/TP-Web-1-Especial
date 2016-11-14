@@ -16,3 +16,4 @@
     public static $ACTION_PRODUCTO_CATEGORIA = 'producto_categoria';
     public static $ACTION_PRODUCTO_ID = 'producto_id';
   }
+?>

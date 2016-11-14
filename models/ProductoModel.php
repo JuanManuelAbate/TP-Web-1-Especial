@@ -6,7 +6,7 @@ class ProductoModel {
 
   function __construct() {
 
-    $this->db = new PDO('mysql:host=localhost;dbname=tpespecialdb;charset=utf8', 'root', '');
+    $this->db = (new DbConnector)->getDbConnection();
   }
 
   function getProductos() {
