@@ -10,45 +10,28 @@
   });
 
   function home() {
-    $.ajax({
-      url: "queEsAp.html",
-      method: "GET",
-      dataType: "html",
-      success: function(data) {
-        $("#mainContent").html(data);
-      },
-      error: function () {
-        alert("Ha ocurrido un error, intente mas tarde");
-      }
+    $.get("queEsAp.html", function(data) {
+      $("#mainContent").html(data);
     });
   }
 
-    function contacto() {
-      $.ajax({
-        url: "form.html",
-        method: "GET",
-        dataType: "html",
-        success: function(data) {
-          console.log("llego el form");
-          $("#mainContent").html(data);
-        },
-        error: function () {
-          alert("Ha ocurrido un error, intente mas tarde");
-        }
-      });
-    }
+  function contacto() {
+    $.get("form.html", function(data) {
+      $("#mainContent").html(data);
+    });
+  }
 
-    function adminProductos() {
-      $.get("index.php?action=producto_admin", function(data) {
-        $("#mainContent").html(data);
-      });
-    }
+  function adminProductos() {
+    $.get("index.php?action=producto_admin", function(data) {
+      $("#mainContent").html(data);
+    });
+  }
 
-    function adminCategorias() {
-      $.get("index.php?action=categoria_admin", function(data) {
-        $("#mainContent").html(data);
-      });
-    }
+  function adminCategorias() {
+    $.get("index.php?action=categoria_admin", function(data) {
+      $("#mainContent").html(data);
+    });
+  }
 
   function categorias() {
     $.get("index.php?action=categorias", function(data) {
