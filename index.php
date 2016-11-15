@@ -2,12 +2,12 @@
   require_once('config/ConfigApp.php');
   require_once('controllers/CategoriaController.php');
   require_once('controllers/ProductoController.php');
-  require_once('dataBase/DbConnector.php');
+  require_once('controllers/DbController.php');
 
-  $dbConnector = new DbConnector();
+  $dbController = new DbController();
 
-  if (!$dbConnector->dbExists()) {
-    $dbConnector->createDatabase();
+  if (!$dbController->dbExists()) {
+    $dbController->newCredentials();
   }
 
   $categoriaController = new CategoriaController();

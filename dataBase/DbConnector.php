@@ -26,7 +26,14 @@
       return true;
     }
 
-    function createDatabase() {
+    function createDatabase($host, $dbName, $user, $password) {
+
+      $this->host = $host;
+      $this->dbName = $dbName;
+      $this->user = $user;
+      $this->password = $password;
+
+      $this->updateCredentials($host, $dbName, $user, $password);
 
       $dbConnection = new PDO('mysql:host='.$this->host.';charset=utf8',$this->user,$this->password);
       $query = $dbConnection->prepare("CREATE DATABASE ".$this->dbName);
@@ -43,6 +50,20 @@
     function getDbConnection() {
 
       return new PDO('mysql:host='.$this->host.';dbname='.$this->dbName.';charset=utf8',$this->user,$this->password);
+    }
+
+    private function updateCredentials($host, $dbName, $user, $password) {
+
+      $credentiaslFile = fopen("dataBase/credentials.ini", "w");
+      $text = "host = ".$host."\n";
+      fwrite($credentiaslFile,$text);
+      $text = "dbName = ".$dbName."\n";
+      fwrite($credentiaslFile,$text);
+      $text = "user = ".$user."\n";
+      fwrite($credentiaslFile,$text);
+      $text = "password = ".$password."\n";
+      fwrite($credentiaslFile,$text);
+      fclose($credentiaslFile);
     }
 
   }
