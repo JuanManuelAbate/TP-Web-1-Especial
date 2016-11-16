@@ -7,7 +7,13 @@
   $dbController = new DbController();
 
   if (!$dbController->dbExists()) {
-    $dbController->newCredentials();
+    if (isset($_POST["host"]) && isset($_POST['dbName']) && isset($_POST['user']) && isset($_POST['password'])){
+      $dbController->createDatabase($_POST['host'],$_POST['dbName'],$_POST['user'],$_POST['password']);
+      die();
+    } else {
+        $dbController->newCredentials();
+        die();
+    }
   }
 
   $categoriaController = new CategoriaController();

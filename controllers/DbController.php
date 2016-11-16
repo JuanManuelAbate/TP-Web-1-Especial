@@ -14,7 +14,7 @@
     }
 
     function dbExists() {
-      
+
       return $this->dbConnector->dbExists();
     }
 
