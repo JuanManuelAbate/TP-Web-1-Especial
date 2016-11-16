@@ -2,12 +2,18 @@
   require_once('config/ConfigApp.php');
   require_once('controllers/CategoriaController.php');
   require_once('controllers/ProductoController.php');
-  require_once('dataBase/DbConnector.php');
+  require_once('controllers/DbController.php');
 
-  $dbConnector = new DbConnector();
+  $dbController = new DbController();
 
-  if (!$dbConnector->dbExists()) {
-    $dbConnector->createDatabase();
+  if (!$dbController->dbExists()) {
+    if (isset($_POST["host"]) && isset($_POST['dbName']) && isset($_POST['user']) && isset($_POST['password'])){
+      $dbController->createDatabase($_POST['host'],$_POST['dbName'],$_POST['user'],$_POST['password']);
+      die();
+    } else {
+        $dbController->newCredentials();
+        die();
+    }
   }
 
   $categoriaController = new CategoriaController();
