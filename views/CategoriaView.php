@@ -34,6 +34,10 @@ class CategoriaView {
     $this->smarty->display('main.tpl');
   }
 
+  function home() {
+      $this->smarty->display('queEsAp.tpl');
+  }
+
 }
 
 ?>

@@ -58,6 +58,10 @@ class CategoriaController {
     $this->categoriaView->main();
   }
 
+  function home() {
+    $this->categoriaView->home();
+  }
+
 }
 
 ?>

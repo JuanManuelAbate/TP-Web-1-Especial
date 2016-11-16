@@ -7,10 +7,25 @@
     $("#productos").on("click", productos);
     $("#adminCategorias").on("click", adminCategorias);
     $("#adminProductos").on("click", adminProductos);
-  });
+    $("#login").on("click", login);
+    $("#logout").on("click", logout);
+
+    });
+
+    function login() {
+      $.get("index.php?action=login", function(data) {
+        $("#mainContent").html(data);
+      });
+    }
+
+    function logout() {
+      $.get("index.php?action=logout", function(data) {
+        $("#mainContent").html(data);
+      });
+    }
 
   function home() {
-    $.get("queEsAp.html", function(data) {
+    $.get("index.php?action=home", function(data) {
       $("#mainContent").html(data);
     });
   }

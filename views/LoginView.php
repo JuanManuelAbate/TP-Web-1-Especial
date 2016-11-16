@@ -11,8 +11,10 @@ class LoginView {
 
   }
 
-  function agregarError($error){
-    $this->smarty->assign("error", $error);
+  function mostrarMensaje($mensaje, $color){
+    $this->smarty->assign("mensaje", $mensaje);
+    $this->smarty->assign("color", $mensaje);
+    $this->mostrar();
   }
 
   function mostrar(){

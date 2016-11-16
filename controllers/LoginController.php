@@ -1,45 +1,67 @@
 <?php
+require_once('views/UsuarioView.php');
 require_once('views/LoginView.php');
 require_once('models/UsuarioModel.php');
-require_once('CategoriaController.php');
 
 class LoginController {
-  private $vista;
+  private $vistaLogin;
   private $modelo;
+  private $vistaPrincipal;
 
   function __construct() {
     $this->modelo = new UsuarioModel();
-    $this->vista = new LoginView();
+    $this->vistaLogin = new LoginView();
+    $this->vistaPrincipal = new UsuarioView();
   }
 
-  public function loguearme() {
-    $usuario = $this->modelo->getUsuario($_POST['email']);
+  public function registrarUsuario() {
+    if((isset($_REQUEST['email'])&&(isset($_REQUEST['pass'])))) {
+          $usuario = $_REQUEST['email'];
+          $pass = $_REQUEST['pass'];
+          // falta controlar si el usuario ya existe
+          $hash = password_hash($pass, PASSWORD_DEFAULT);
+          $this->modelo->insertarUsuario($usuario,$hash);
+          $this->vistaLogin->mostrarMensaje("Usted se ha registrado exitosamente, inicie sesion","success");
+          
+        }
+        else {
+              $this->vistaLogin->mostrarMensaje("Ha ocurrido un error","danger");
+        }
+  }
+
+
+   function loguearUsuario() {
+    $usuario = $this->modelo->getUsuario($_REQUEST['email']);
     if(!$usuario) {
-      header("Location: index.php?action=login");
+      registrarUsuario();
     }
-    else if(isset($_POST['email']) && isset($_POST['pass'])){
-      $email = $_POST['email'];
-      $password = $_POST['pass'];
-      $usuario = $this->modelo->getUsuario($email);
-      if (password_verify($password, $usuario['password'])) {
+    else if(isset($_REQUEST['email']) && isset($_REQUEST['pass'])){
+      $email = $_REQUEST['email'];
+      $password = $_REQUEST['pass'];
+      $hash = $this->modelo->getUsuario($email)["password"];
+
+      if (password_verify($password, $hash)) {
         session_start();
         $_SESSION['USER'] = $email;
-        header("Location: index.php");
+        $tipo = $this->model->getUsuario($email)["tipo"];
+        $controlUsuario = true;
+        $this->vistaPrincipal->iniciarVistaUsuario($controlUsuario, $tipo);
         die();
       }
       else
-       $this->vista->agregarError('Usuario o contraseña incorrectos');
+       $this->vistaLogin->mostrarMensaje('Usuario o contraseña incorrectos', "danger");
     }
   }
 
   public function login() {
-    $this->vista->mostrar();
+    $this->vistaLogin->mostrar();
+
   }
 
   public function checkLogin(){
     session_start();
     if(!isset($_SESSION['USER'])){
-      header("Location: index.php?action=login");
+      header("Location: index.php");
       die();
     };
   }
@@ -51,7 +73,4 @@ class LoginController {
     die();
   }
 
-    public function validar(){
-
-    }
 }
