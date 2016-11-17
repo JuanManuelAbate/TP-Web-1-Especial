@@ -17,12 +17,7 @@
     <ul class="nav navbar-nav navbar-right">
 
       <li class="navList"><a href="#" id="login">Login</a></li>
-
-      {if (verif)}
-      <li class="navList"><a href="#" id="logout">Logout</a></li>
-      {/if}
-
-
+      <li class="navList"><a href="#" id="registrarse">Registrarse</a></li>
       </ul>
   </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
@@ -53,6 +48,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
       {if (!verif) }
+
            <li class="navList"><a href="#" id="adminProductos">Administrador Productos |</a></li>
           <li class="navList"><a href="#" id="adminCategorias">Administrador Categorias |</a></li>
 

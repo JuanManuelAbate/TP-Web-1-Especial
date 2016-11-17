@@ -41,5 +41,7 @@
   <script src="js/adminProducto.js"></script>
   <!-- Navegacion -->
   <script src="js/navegacion.js"></script>
+  <!-- Usuario -->
+  <script src="js/usuario.js"></script>
 </body>
 </html>

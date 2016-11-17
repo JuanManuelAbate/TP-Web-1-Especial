@@ -11,10 +11,10 @@ class LoginView {
 
   }
 
-  function mostrarMensaje($mensaje, $color){
-    $this->smarty->assign("mensaje", $mensaje);
-    $this->smarty->assign("color", $mensaje);
-    $this->mostrar();
+  function main() {
+    $verif = false;
+    $this->smarty->assign('verif',$verif);
+    $this->smarty->display('main.tpl');
   }
 
   function mostrar(){

@@ -10,7 +10,7 @@
   $usuarioController = new UsuarioController();
 
 if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
-  $usuarioController->main();
+  $loginController->main();
   die();
 }
 
@@ -31,7 +31,10 @@ if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
       $loginController->loguearUsuario();
       break;
     case ConfigApp::$ACTION_REGISTRARSE:
-        $loginController->registrarUsuario();
+        $usuarioController->registrarUsuarioForm();
+        break;
+    case ConfigApp::$ACTION_USUARIO_REGISTRAR:
+        $usuarioController->registrar();
         break;
     case ConfigApp::$ACTION_LOGOUT:
       $loginController->logout();

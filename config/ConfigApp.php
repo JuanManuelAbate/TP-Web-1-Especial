@@ -22,5 +22,5 @@
     public static $ACTION_LOGOUT = 'logout';
     public static $ACTION_LOGUEARME = 'loguearme';
     public static $ACTION_REGISTRARSE = "registrarse";
-//    public static $ACTION_USUARIO_NUEVO = 'usuario_nuevo';
+    public static $ACTION_USUARIO_REGISTRAR = 'usuario_registrar';
   }

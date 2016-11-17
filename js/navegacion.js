@@ -8,18 +8,17 @@
     $("#adminCategorias").on("click", adminCategorias);
     $("#adminProductos").on("click", adminProductos);
     $("#login").on("click", login);
-    $("#logout").on("click", logout);
-
+    $("#registrarse").on("click", registrarse);
     });
 
-    function login() {
-      $.get("index.php?action=login", function(data) {
-        $("#mainContent").html(data);
+    function registrarse() {
+      $.get("index.php?action=registrarse", function(data) {
+          $("#mainContent").html(data);
       });
     }
 
-    function logout() {
-      $.get("index.php?action=logout", function(data) {
+    function login() {
+      $.get("index.php?action=login", function(data) {
         $("#mainContent").html(data);
       });
     }

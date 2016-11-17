@@ -1,34 +1,19 @@
 <?php
-require_once('views/UsuarioView.php');
 require_once('views/LoginView.php');
 require_once('models/UsuarioModel.php');
 
 class LoginController {
   private $vistaLogin;
-  private $modelo;
-  private $vistaPrincipal;
+  private $modeloUsuario;
 
   function __construct() {
-    $this->modelo = new UsuarioModel();
+    $this->modeloUsuario = new UsuarioModel();
     $this->vistaLogin = new LoginView();
-    $this->vistaPrincipal = new UsuarioView();
   }
 
-  public function registrarUsuario() {
-    if((isset($_REQUEST['email'])&&(isset($_REQUEST['pass'])))) {
-          $usuario = $_REQUEST['email'];
-          $pass = $_REQUEST['pass'];
-          // falta controlar si el usuario ya existe
-          $hash = password_hash($pass, PASSWORD_DEFAULT);
-          $this->modelo->insertarUsuario($usuario,$hash);
-          $this->vistaLogin->mostrarMensaje("Usted se ha registrado exitosamente, inicie sesion","success");
-          
-        }
-        else {
-              $this->vistaLogin->mostrarMensaje("Ha ocurrido un error","danger");
-        }
+  function main() {
+    $this->vistaLogin->main();
   }
-
 
    function loguearUsuario() {
     $usuario = $this->modelo->getUsuario($_REQUEST['email']);
