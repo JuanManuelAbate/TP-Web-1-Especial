@@ -1,4 +1,20 @@
 <?php
+/*
+class Usuario {
+
+  static function createFromArray($datos){
+    $inst = new Usuario();
+    $inst->email= $datos['email'];
+    $ins->tipo_usuario= $datos['tipo_usuario'];
+    return $inst;
+  }
+
+  function isAdmin() {
+    return ($this->tipo_usuario == 2);
+  }
+
+}
+*/
 
 class UsuarioModel {
 
@@ -21,4 +37,6 @@ class UsuarioModel {
     $query = $this->db->prepare("INSERT INTO usuario(email,password) VALUES (?,?)");
     $query->execute(array($email,$hash));
   }
+
+
 }

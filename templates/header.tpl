@@ -1,9 +1,8 @@
-<header>
+
   {if isset($mensaje)}
   <div class="alert alert-{$color}" role="alert">{$mensaje}</div>
   {/if}
 
-  {if (verif)}
   <nav class="navbar navbar-default navRegister">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -13,17 +12,19 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-right">
-
-      <li class="navList"><a href="#" id="login">Login</a></li>
-      <li class="navList"><a href="#" id="registrarse">Registrarse</a></li>
-      </ul>
-  </div><!-- /.navbar-collapse -->
-</div><!-- /.container-fluid -->
-</div>
-</nav>
-{/if}
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            {if ($usuarioIn)}
+              <li class="navList"><a href="#" id="logout">Logout</a></li>
+            {else}
+              <li class="navList"><a href="#" id="login">Login</a></li>
+              <li class="navList"><a href="#" id="registrarse">Registrarse</a></li>
+            {/if}
+              </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </div>
+  </nav>
 
   <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -46,18 +47,15 @@
           <li class="navList"><a href="#" id="productos">Productos</a></li>
           <li class="navList"><a href="#" id="contacto">Contacto</a></li>
         </ul>
+
+        {if ($usuarioIn) && ($tipo==1)}
         <ul class="nav navbar-nav navbar-right">
-      {if (!verif) }
-
-           <li class="navList"><a href="#" id="adminProductos">Administrador Productos |</a></li>
+          <li class="navList"><a href="#" id="adminProductos">Administrador Productos |</a></li>
           <li class="navList"><a href="#" id="adminCategorias">Administrador Categorias |</a></li>
-
-      {/if}
-
         </ul>
+        {/if}
+
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 
   </nav>
-
-</header>

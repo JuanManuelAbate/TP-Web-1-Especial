@@ -14,26 +14,37 @@ class UsuarioController{
 
   }
 
+    function main() {
+      $usuarioIn = false;
+      $this->usuarioView->main($usuarioIn);
+    }
+
+
+
   function registrarUsuarioForm() {
     $this->usuarioView->registrarUsuarioForm();
   }
 
   public function registrar() {
     if((isset($_REQUEST['email'])&&(isset($_REQUEST['pass'])))) {
-          $usuario = $_REQUEST['email'];
-          $pass = $_REQUEST['pass'];
-          // falta controlar si el usuario ya existe
-          $hash = password_hash($pass, PASSWORD_DEFAULT);
-          $this->usuarioModel->insertarUsuario($usuario,$hash);
-          $this->usuarioView->mostrarMensaje("Usted se ha registrado exitosamente, inicie sesion","success");
+      $usuario = $_REQUEST['email'];
+      $pass = $_REQUEST['pass'];
+      // falta controlar si el usuario ya existe
+      $existeUsuario = $this->usuarioModel->getUsuario($usuario);
+        if($existeUsuario) {
+          $this->usuarioView->mostrarMensaje("Este usuario ya existe, por favor ingrese otro nombre", "danger");
         }
         else {
-              $this->usuarioView->mostrarMensaje("Ha ocurrido un error","danger");
+          $hash = password_hash($pass, PASSWORD_DEFAULT);
+          $this->usuarioModel->insertarUsuario($usuario,$hash);
+          $this->usuarioView->mostrarMensaje("Usted ya esta registrado, inicie sesion","success");
         }
+    }
+    else {
+      $this->usuarioView->mostrarMensaje("Ha ocurrido un error","danger");
+    }
   }
-
-
 }
 
 
- ?>
+?>

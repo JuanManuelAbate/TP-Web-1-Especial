@@ -1,14 +1,16 @@
   $("document").ready(function () {
     home();
-    $("#logo").on("click", home);
-    $("#home").on("click", home);
-    $("#contacto").on("click", contacto);
-    $("#categorias").on("click", categorias);
-    $("#productos").on("click", productos);
-    $("#adminCategorias").on("click", adminCategorias);
-    $("#adminProductos").on("click", adminProductos);
-    $("#login").on("click", login);
-    $("#registrarse").on("click", registrarse);
+    $("body").on("click", "#logo", logo);
+    $("body").on("click", "#home", home);
+    $("body").on("click", "#contacto", contacto);
+    $("body").on("click", "#categorias", categorias);
+    $("body").on("click", "#productos", productos);
+    $("body").on("click", "#adminCategorias", adminCategorias);
+    $("body").on("click", "#adminProductos", adminProductos);
+    $("body").on("click", "#login", login);
+    $("body").on("click", "#logout", logout);
+    $("body").on("click", "#registrarse", registrarse);
+
     });
 
     function registrarse() {
@@ -23,8 +25,16 @@
       });
     }
 
+    function logout() {
+      $.get("index.php?action=logout", function(data) {
+          $("header").html(data);
+          home();
+      });
+    }
+
+
   function home() {
-    $.get("index.php?action=home", function(data) {
+    $.get("templates/queEsAp.tpl", function(data) {
       $("#mainContent").html(data);
     });
   }

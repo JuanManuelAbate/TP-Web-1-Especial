@@ -12,21 +12,27 @@ class UsuarioView {
 
   }
 
+    function main($usuarioIn) {
+      $tipo = 0;
+      $this->smarty->assign('tipo', $tipo);
+      $this->smarty->assign('usuarioIn',$usuarioIn);
+      $this->smarty->display('main.tpl');
+    }
+
   function registrarUsuarioForm() {
     $this->smarty->display('registrarse.tpl');
   }
 
   function mostrarMensaje($mensaje, $color){
     $this->smarty->assign("mensaje", $mensaje);
-    $this->smarty->assign("color", $mensaje);
+    $this->smarty->assign("color", $color);
     $this->registrarUsuarioForm();
   }
 
-  function iniciarVistaUsuario($verif,$tipo){
-    $this->smarty->assign('verif',$verif);
+  function vistaAdm($usuarioIn,$tipo){
+    $this->smarty->assign('usuarioIn',$usuarioIn);
     $this->smarty->assign('tipo',$tipo);
-    $this->smarty->display("main.tpl");
-
+    $this->smarty->display("header.tpl");
   }
 }
 

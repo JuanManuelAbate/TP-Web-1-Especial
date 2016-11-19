@@ -4,41 +4,36 @@
   require_once('controllers/ProductoController.php');
   require_once('controllers/LoginController.php');
   require_once('controllers/UsuarioController.php');
+
   $loginController = new LoginController();
+  $usuarioController = new UsuarioController();
   $categoriaController = new CategoriaController();
   $productoController = new ProductoController();
-  $usuarioController = new UsuarioController();
 
-if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
-  $loginController->main();
-  die();
-}
+// $loginController->checkLogin();
 
-/*
- if (isset($_REQUEST[ConfigApp::$ACTION]) &&
-      $_REQUEST[ConfigApp::$ACTION] != ConfigApp::$ACTION_LOGIN &&
-      $_REQUEST[ConfigApp::$ACTION] != ConfigApp::$ACTION_LOGUEARME)
-     $loginController->checkLogin();
-*/
+  if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
+    $usuarioController->main();
+    die();
+  }
+
   switch ($_REQUEST[ConfigApp::$ACTION]) {
-    case ConfigApp::$ACTION_HOME:
-      $categoriaController->home();
+
+    case ConfigApp::$ACTION_REGISTRARSE:
+      $usuarioController->registrarUsuarioForm();
+      break;
+    case ConfigApp::$ACTION_USUARIO_REGISTRAR:
+      $usuarioController->registrar();
       break;
     case ConfigApp::$ACTION_LOGIN:
-      $loginController->login();
+      $loginController->loguearUsuarioForm();
       break;
     case ConfigApp::$ACTION_LOGUEARME:
-      $loginController->loguearUsuario();
+      $loginController->loguear();
       break;
-    case ConfigApp::$ACTION_REGISTRARSE:
-        $usuarioController->registrarUsuarioForm();
+      case ConfigApp::$ACTION_LOGOUT:
+        $loginController->logout();
         break;
-    case ConfigApp::$ACTION_USUARIO_REGISTRAR:
-        $usuarioController->registrar();
-        break;
-    case ConfigApp::$ACTION_LOGOUT:
-      $loginController->logout();
-      break;
     case ConfigApp::$ACTION_CATEGORIA_CREAR:
       $categoriaController->createCategoria();
       break;

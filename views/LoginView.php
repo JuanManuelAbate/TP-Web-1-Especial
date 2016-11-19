@@ -11,15 +11,22 @@ class LoginView {
 
   }
 
-  function main() {
-    $verif = false;
-    $this->smarty->assign('verif',$verif);
-    $this->smarty->display('main.tpl');
-  }
-
-  function mostrar(){
+  function loguearUsuarioForm(){
     $this->smarty->display('login.tpl');
   }
+
+  function mostrarMensaje($mensaje, $color){
+    $this->smarty->assign("mensaje", $mensaje);
+    $this->smarty->assign("color", $color);
+    $this->loguearUsuarioForm();
+  }
+
+  function home() {
+    $this->smarty->display('queEsAp.tpl');
+  }
+
+
+
 
 }
 

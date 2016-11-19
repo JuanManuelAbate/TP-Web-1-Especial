@@ -28,16 +28,10 @@ class CategoriaView {
     $this->smarty->assign('categorias',$categorias);
     $this->smarty->display('categorias.tpl');
   }
-
   //MOMENTANEO, LUEGO VER COMO RESOLVER!!!
   function main() {
     $this->smarty->display('main.tpl');
   }
-
-  function home() {
-      $this->smarty->display('queEsAp.tpl');
-  }
-
 }
 
 ?>
