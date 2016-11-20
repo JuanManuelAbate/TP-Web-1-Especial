@@ -49,14 +49,19 @@ class ProductoController {
     $this->productoView->verProductosConImg($productos);
   }
 
-  function getImagenesProducto() {
-
-    $productos = $this->productoModel->getImagenesProducto($_GET['id_producto']);
-  }
-
   function updateProducto() {
 
     $this->productoModel->updateProducto($_POST['updateIdProducto'], $_POST['updateNombreProducto'], $_POST['updateDescripcionProducto'], $_POST['updateCategoriaProducto'], $_FILES['updateImagenesProducto']);
+  }
+
+  function adminProductoImagenes() {
+
+    $this->productoView->adminProductoImagenes($this->productoModel->getImagenesProducto($_GET['id_producto']));
+  }
+
+  function eliminarImagen() {
+
+    $this->productoModel->deleteImagen($_POST['id_imagen']);
   }
 
 }

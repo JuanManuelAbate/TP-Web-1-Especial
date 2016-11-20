@@ -60,6 +60,7 @@
         <th class="thCenter">Descripcion</th>
         <th class="thCenter" >Categoria</th>
         <th class="thCenter">Modificar</th>
+        <th class="thCenter">Borrar Imagenes</th>
         <th class="thCenter">Borrar</th>
       </thead>
       <tbody id="tableProductos">
@@ -70,6 +71,7 @@
             <td>{$producto.descripcion}</td>
             <td data-id-categoria={$producto.fk_id_categoria}>{$producto.nombre_categoria|capitalize:true}</td>
             <td><button class="btn center-block updateProducto"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></button></td>
+            <td><button class="btn center-block deleteProductoImagenes">Seleccionar</button></td>
             <td><button class="btn center-block deleteProducto"><span class="glyphicon glyphicon-trash" aria-hidden="true"></button></td>
           </tr>
         {/foreach}

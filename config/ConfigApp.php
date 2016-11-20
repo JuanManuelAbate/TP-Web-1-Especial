@@ -15,5 +15,7 @@
     public static $ACTION_PRODUCTO_MODIFICAR = 'producto_modificar';
     public static $ACTION_PRODUCTO_CATEGORIA = 'producto_categoria';
     public static $ACTION_PRODUCTO_ID = 'producto_id';
+    public static $ACTION_PRODUCTO_ADMIN_IMAGENES = 'producto_admin_imagenes';
+    public static $ACTION_PRODUCTO_IMAGEN_ELIMINAR = 'producto_imagen_eliminar';
   }
 ?>
