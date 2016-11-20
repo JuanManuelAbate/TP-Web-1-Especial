@@ -2,6 +2,7 @@ CREATE TABLE `categoria`(`id_categoria` INT(11) NOT NULL PRIMARY KEY AUTO_INCREM
 CREATE TABLE `producto`(`id_producto` INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,`nombre` VARCHAR(50) NOT NULL,`descripcion` VARCHAR(500) NOT NULL,`fk_id_categoria` INT(11) NOT NULL,FOREIGN KEY (`fk_id_categoria`) REFERENCES `categoria`(`id_categoria`));
 CREATE TABLE `imagen` (`id_imagen` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,`path` varchar(500) NOT NULL,`fk_id_producto` int(11) NOT NULL,FOREIGN KEY (`fk_id_producto`) REFERENCES `producto`(`id_producto`));
 CREATE TABLE `usuario`(`id_usuario` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,`email` varchar(100) UNIQUE NOT NULL,`password` varchar(555) NOT NULL,`tipo_usuario` tinyint(1) NOT NULL DEFAULT '0');
+CREATE TABLE `comentario`(`id_comentario` INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,`comentario` VARCHAR(200) NOT NULL,`puntaje` INT(11) NOT NULL,`fk_id_producto` INT(11) NOT NULL,FOREIGN KEY (`fk_id_producto`) REFERENCES `producto`(`id_producto`));
 INSERT INTO categoria(nombre) VALUES ('categoria1');
 INSERT INTO categoria(nombre) VALUES ('categoria2');
 INSERT INTO categoria(nombre) VALUES ('categoria3');
@@ -23,3 +24,8 @@ INSERT INTO producto(nombre,descripcion,fk_id_categoria) VALUES ('producto8','De
 INSERT INTO producto(nombre,descripcion,fk_id_categoria) VALUES ('producto9','Descripcion producto 9', 9);
 INSERT INTO producto(nombre,descripcion,fk_id_categoria) VALUES ('producto10','Descripcion producto 10', 10);
 INSERT INTO usuario(email,password,tipo_usuario) VALUES ('admin@admin.com', 'admin', 1);
+INSERT INTO comentario (comentario,puntaje,fk_id_producto) Values ('comentario 1',1,1);
+INSERT INTO comentario (comentario,puntaje,fk_id_producto) Values ('comentario 2',2,1);
+INSERT INTO comentario (comentario,puntaje,fk_id_producto) Values ('comentario 3',3,1);
+INSERT INTO comentario (comentario,puntaje,fk_id_producto) Values ('comentario 1',4,2);
+INSERT INTO comentario (comentario,puntaje,fk_id_producto) Values ('comentario 2',5,2);
