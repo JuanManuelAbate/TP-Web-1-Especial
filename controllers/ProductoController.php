@@ -44,9 +44,13 @@ class ProductoController {
   }
 
   function productoById() {
-
+    session_start();
     $productos = $this->productoModel->getProductoById($_GET['id_producto']);
-    $this->productoView->verProductosConImg($productos);
+    $logueado= false;
+    if(isset($_SESSION['USER'])){
+      $logueado = true;
+    }
+    $this->productoView->verProductosConImg($productos, $logueado);
   }
 
   function updateProducto() {

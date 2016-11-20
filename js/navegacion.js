@@ -87,7 +87,14 @@
       action: "producto_id",
       id_producto: $(this).attr("data-id")
     }).done(function (data) {
-      console.log(data)
       $("#mainContent").html(data);
+      $.ajax({
+        method:"GET",
+        dataType: "JSON",
+        url: "api/comentario/1",
+        success: function(data){
+          console.log(data);
+        }
+      });
     });
   }

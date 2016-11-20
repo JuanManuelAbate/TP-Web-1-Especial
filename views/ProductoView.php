@@ -35,11 +35,11 @@ class ProductoView {
     $this->smarty->display('listaProductos.tpl');
   }
 
-  function verProductosConImg($productos) {
-
-      $this->smarty->assign('productos', $productos);
-      $this->smarty->display('detalleProductos.tpl');
-    }
+  function verProductosConImg($productos,$logueado) {
+    $this->smarty->assign('logueado', $logueado);
+    $this->smarty->assign('productos', $productos);
+    $this->smarty->display('detalleProductos.tpl');
+  }
 
   function adminProductoImagenes($imagenesProducto) {
 
