@@ -29,7 +29,6 @@ class UsuarioController{
     if((isset($_REQUEST['email'])&&(isset($_REQUEST['pass'])))) {
       $usuario = $_REQUEST['email'];
       $pass = $_REQUEST['pass'];
-      // falta controlar si el usuario ya existe
       $existeUsuario = $this->usuarioModel->getUsuario($usuario);
         if($existeUsuario) {
           $this->usuarioView->mostrarMensaje("Este usuario ya existe, por favor ingrese otro nombre", "danger");
