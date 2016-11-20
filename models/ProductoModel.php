@@ -6,7 +6,7 @@ class ProductoModel {
 
   function __construct() {
 
-    $this->db = new PDO('mysql:host=localhost;dbname=tpespecialdb;charset=utf8', 'root', '');
+    $this->db = (new DbConnector)->getDbConnection();
   }
 
   function getProductos() {
@@ -89,6 +89,17 @@ class ProductoModel {
     $query = $this->db->prepare( "select * from imagen where fk_id_producto=?");
     $query->execute(array($id_producto));
     return $query->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  function deleteImagen($idImagen) {
+
+    $query = $this->db->prepare("select * from imagen where id_imagen=?");
+    $query->execute(array($idImagen));
+    $imagen = $query->fetchAll(PDO::FETCH_ASSOC);
+    unlink($imagen[0][path]);
+
+    $query = $this->db->prepare("delete from imagen where id_imagen=?");
+    $query->execute(array($idImagen));
   }
 
 }

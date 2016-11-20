@@ -4,6 +4,19 @@
   require_once('controllers/ProductoController.php');
   require_once('controllers/LoginController.php');
   require_once('controllers/UsuarioController.php');
+  require_once('controllers/DbController.php');
+
+  $dbController = new DbController();
+
+  if (!$dbController->dbExists()) {
+    if (isset($_POST["host"]) && isset($_POST['dbName']) && isset($_POST['user']) && isset($_POST['password'])){
+      $dbController->createDatabase($_POST['host'],$_POST['dbName'],$_POST['user'],$_POST['password']);
+      die();
+    } else {
+        $dbController->newCredentials();
+        die();
+    }
+  }
 
   $loginController = new LoginController();
   $usuarioController = new UsuarioController();
@@ -70,8 +83,15 @@
     case ConfigApp::$ACTION_PRODUCTO_MODIFICAR:
       $productoController->updateProducto();
       break;
+    case ConfigApp::$ACTION_PRODUCTO_ADMIN_IMAGENES:
+      $productoController->adminProductoImagenes();
+      break;
+    case ConfigApp::$ACTION_PRODUCTO_IMAGEN_ELIMINAR:
+      $productoController->eliminarImagen();
+      break;
 
     default:
       $usuarioController->main();
       break;
   }
+?>

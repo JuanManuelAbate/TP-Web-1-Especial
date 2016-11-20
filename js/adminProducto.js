@@ -54,4 +54,20 @@ $("document").ready(function(){
     });
   });
 
+  $("body").on("click", ".deleteProductoImagenes", function() {
+    event.preventDefault();
+    var productId = $(this).closest('tr');
+    $.get("index.php?action=producto_admin_imagenes", {id_producto: productId.attr("data-id")}, function(data) {
+      $("#mainContent").html(data);
+    });
+  });
+
+  $("body").on("click", ".deleteProductoImagen", function() {
+    event.preventDefault();
+    var rowToDelete = $(this).closest('tr');
+    $.post("index.php?action=producto_imagen_eliminar", {id_imagen: rowToDelete.attr("data-id")}, function() {
+      rowToDelete.remove();
+    });
+  });
+
 });
