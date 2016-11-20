@@ -61,6 +61,12 @@
     case ConfigApp::$ACTION_PRODUCTO_MODIFICAR:
       $productoController->updateProducto();
       break;
+    case ConfigApp::$ACTION_PRODUCTO_ADMIN_IMAGENES:
+      $productoController->adminProductoImagenes();
+      break;
+    case ConfigApp::$ACTION_PRODUCTO_IMAGEN_ELIMINAR:
+      $productoController->eliminarImagen();
+      break;
 
     default:
       $categoriaController->main();

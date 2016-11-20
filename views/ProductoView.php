@@ -10,7 +10,7 @@ class ProductoView {
   }
 
   function adminProducto($categorias, $productos) {
-    
+
     $this->smarty->assign('categorias', $categorias);
     $this->smarty->assign('productos', $productos);
     $this->smarty->display('adminProducto.tpl');
@@ -40,6 +40,12 @@ class ProductoView {
       $this->smarty->assign('productos', $productos);
       $this->smarty->display('detalleProductos.tpl');
     }
+
+  function adminProductoImagenes($imagenesProducto) {
+
+    $this->smarty->assign('imagenes', $imagenesProducto);
+    $this->smarty->display('adminProductoImagenes.tpl');
+  }
 
 }
 

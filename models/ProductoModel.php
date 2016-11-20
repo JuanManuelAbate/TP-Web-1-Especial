@@ -91,6 +91,17 @@ class ProductoModel {
     return $query->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  function deleteImagen($idImagen) {
+
+    $query = $this->db->prepare("select * from imagen where id_imagen=?");
+    $query->execute(array($idImagen));
+    $imagen = $query->fetchAll(PDO::FETCH_ASSOC);
+    unlink($imagen[0][path]);
+
+    $query = $this->db->prepare("delete from imagen where id_imagen=?");
+    $query->execute(array($idImagen));
+  }
+
 }
 
 ?>
