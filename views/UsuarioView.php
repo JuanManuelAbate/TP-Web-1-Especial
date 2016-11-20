@@ -29,7 +29,7 @@ class UsuarioView {
     $this->registrarUsuarioForm();
   }
 
-  function vistaAdm($usuarioIn,$tipo){
+  function vistaAdm($usuarioIn, $tipo){
     $this->smarty->assign('usuarioIn',$usuarioIn);
     $this->smarty->assign('tipo',$tipo);
     $this->smarty->display("header.tpl");

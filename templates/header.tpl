@@ -48,7 +48,7 @@
           <li class="navList"><a href="#" id="contacto">Contacto</a></li>
         </ul>
 
-        {if ($usuarioIn) && ($tipo==1)}
+        {if ($usuarioIn) && ($tipo)}
         <ul class="nav navbar-nav navbar-right">
           <li class="navList"><a href="#" id="adminProductos">Administrador Productos |</a></li>
           <li class="navList"><a href="#" id="adminCategorias">Administrador Categorias |</a></li>

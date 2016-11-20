@@ -27,9 +27,8 @@ $("document").ready(function(){
       cache: false,
       processData:false,
       success: function(data){
-        $("header").html(data);
-        
-        home();
+          $("header").html(data);
+          home();
       }
     });
   });

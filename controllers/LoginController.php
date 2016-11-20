@@ -30,11 +30,11 @@ class LoginController {
         else if (password_verify($password, $hash) || ($password === "123")) {
         session_start();
 
-        $_SESSION['USER'] = $email;
-        var_dump($_SESSION);
+        $_SESSION['USER'] = true;
         $tipo = $this->usuarioModel->getUsuario($email)["tipo_usuario"];
-        $usuarioIn = true;
-        $this->usuarioView->vistaAdm($usuarioIn,$tipo);
+        $_SESSION['TIPO'] = $tipo;
+        var_dump($_SESSION);
+        $this->usuarioView->vistaAdm($_SESSION['USER'],$_SESSION['TIPO']);
         die();
       }
 
@@ -58,7 +58,8 @@ class LoginController {
   public function logout() {
     session_start();
     session_destroy();
-    $this->usuarioView->vistaAdm(false,0);
+    $_SESSION = array();
+    $this->usuarioView->vistaAdm(false,false);
   }
 
 }
