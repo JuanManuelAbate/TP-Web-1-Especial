@@ -11,9 +11,22 @@ class LoginView {
 
   }
 
-  function mostrar($error){
+  function loguearUsuarioForm(){
     $this->smarty->display('login.tpl');
   }
+
+  function mostrarMensaje($mensaje, $color){
+    $this->smarty->assign("mensaje", $mensaje);
+    $this->smarty->assign("color", $color);
+    $this->loguearUsuarioForm();
+  }
+
+  function home() {
+    $this->smarty->display('queEsAp.tpl');
+  }
+
+
+
 
 }
 

@@ -1,54 +1,61 @@
   $("document").ready(function () {
     home();
-    $("#logo").on("click", home);
-    $("#home").on("click", home);
-    $("#contacto").on("click", contacto);
-    $("#categorias").on("click", categorias);
-    $("#productos").on("click", productos);
-    $("#adminCategorias").on("click", adminCategorias);
-    $("#adminProductos").on("click", adminProductos);
-  });
+    $("body").on("click", "#logo", logo);
+    $("body").on("click", "#home", home);
+    $("body").on("click", "#contacto", contacto);
+    $("body").on("click", "#categorias", categorias);
+    $("body").on("click", "#productos", productos);
+    $("body").on("click", "#adminCategorias", adminCategorias);
+    $("body").on("click", "#adminProductos", adminProductos);
+    $("body").on("click", "#login", login);
+    $("body").on("click", "#logout", logout);
+    $("body").on("click", "#registrarse", registrarse);
+
+    });
+
+    function registrarse() {
+      $.get("index.php?action=registrarse", function(data) {
+          $("#mainContent").html(data);
+      });
+    }
+
+    function login() {
+      $.get("index.php?action=login", function(data) {
+        $("#mainContent").html(data);
+      });
+    }
+
+    function logout() {
+      $.get("index.php?action=logout", function(data) {
+          $("header").html(data);
+          home();
+      });
+    }
+
 
   function home() {
-    $.ajax({
-      url: "queEsAp.html",
-      method: "GET",
-      dataType: "html",
-      success: function(data) {
-        $("#mainContent").html(data);
-      },
-      error: function () {
-        alert("Ha ocurrido un error, intente mas tarde");
-      }
+    $.get("templates/queEsAp.tpl", function(data) {
+      $("#mainContent").html(data);
     });
   }
 
-    function contacto() {
-      $.ajax({
-        url: "form.html",
-        method: "GET",
-        dataType: "html",
-        success: function(data) {
-          console.log("llego el form");
-          $("#mainContent").html(data);
-        },
-        error: function () {
-          alert("Ha ocurrido un error, intente mas tarde");
-        }
-      });
-    }
+  function contacto() {
+    $.get("form.html", function(data) {
+      $("#mainContent").html(data);
+    });
+  }
 
-    function adminProductos() {
-      $.get("index.php?action=producto_admin", function(data) {
-        $("#mainContent").html(data);
-      });
-    }
+  function adminProductos() {
+    $.get("index.php?action=producto_admin", function(data) {
+      $("#mainContent").html(data);
+    });
+  }
 
-    function adminCategorias() {
-      $.get("index.php?action=categoria_admin", function(data) {
-        $("#mainContent").html(data);
-      });
-    }
+  function adminCategorias() {
+    $.get("index.php?action=categoria_admin", function(data) {
+      $("#mainContent").html(data);
+    });
+  }
 
   function categorias() {
     $.get("index.php?action=categorias", function(data) {

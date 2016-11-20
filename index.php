@@ -2,6 +2,8 @@
   require_once('config/ConfigApp.php');
   require_once('controllers/CategoriaController.php');
   require_once('controllers/ProductoController.php');
+  require_once('controllers/LoginController.php');
+  require_once('controllers/UsuarioController.php');
   require_once('controllers/DbController.php');
 
   $dbController = new DbController();
@@ -16,15 +18,35 @@
     }
   }
 
+  $loginController = new LoginController();
+  $usuarioController = new UsuarioController();
   $categoriaController = new CategoriaController();
   $productoController = new ProductoController();
 
-  if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)) {
-    $categoriaController->main();
+// $loginController->checkLogin();
+
+  if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
+    $usuarioController->main();
     die();
   }
 
   switch ($_REQUEST[ConfigApp::$ACTION]) {
+
+    case ConfigApp::$ACTION_REGISTRARSE:
+      $usuarioController->registrarUsuarioForm();
+      break;
+    case ConfigApp::$ACTION_USUARIO_REGISTRAR:
+      $usuarioController->registrar();
+      break;
+    case ConfigApp::$ACTION_LOGIN:
+      $loginController->loguearUsuarioForm();
+      break;
+    case ConfigApp::$ACTION_LOGUEARME:
+      $loginController->loguear();
+      break;
+      case ConfigApp::$ACTION_LOGOUT:
+        $loginController->logout();
+        break;
     case ConfigApp::$ACTION_CATEGORIA_CREAR:
       $categoriaController->createCategoria();
       break;
@@ -69,8 +91,7 @@
       break;
 
     default:
-      $categoriaController->main();
+      $usuarioController->main();
       break;
   }
-
 ?>
