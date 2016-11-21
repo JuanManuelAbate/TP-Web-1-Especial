@@ -57,10 +57,22 @@
                 </select></label>
               </div>
               <input type="submit" class="btn btn-default center-block bold">
-
           </form>
         </div>
       </div>
       {/if}
+      <div class="row">
+        <div class="col-xs-6 col-md-12 productos">
+          <table class="table table-responsive text-center">
+            <thead>
+              <th class="thCenter">Comentario</th>
+              <th class="thCenter">Puntaje</th>
+            </thead>
+            <tbody id="tablaComentarios">
+
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>

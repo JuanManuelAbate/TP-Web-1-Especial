@@ -35,6 +35,8 @@
   <script src="js/jquery.min.js"></script>
   <!-- bootstrap -->
   <script src="js/bootstrap.min.js"></script>
+  <!-- Mustache -->
+  <script src="js/mustache.min.js"></script>
   <!-- JS propio -->
   <!-- Categoria Admin -->
   <script src="js/adminCategorias.js"></script>
@@ -44,8 +46,7 @@
   <script src="js/navegacion.js"></script>
   <!-- Usuario -->
   <script src="js/usuario.js"></script>
-  <!-- Comentarios -->
-  <script src="js/comentario.js"></script>
+
 
 </body>
 </html>

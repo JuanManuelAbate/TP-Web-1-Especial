@@ -1,0 +1,6 @@
+{{#comentarios}}
+  <tr>
+    <td>{{comentario}}</td>
+    <td>{{puntaje}}</td>
+  <tr>
+{{/comentarios}}

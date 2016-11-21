@@ -82,19 +82,30 @@
     });
   }
 
+  function getComentariosProducto(idProducto) {
+    $.ajax({
+      method:"GET",
+      dataType: "JSON",
+      url: "api/comentario/" + idProducto,
+      success: function(data){
+        $.ajax({
+          url: 'js/templates/tablaComentarios.mst',
+          success: function(templateReceived) {
+            var rendered = Mustache.render(templateReceived,{comentarios : data});
+            $("#tablaComentarios").html(rendered);
+          }
+        });
+      }
+    });
+  }
+
   function verItem() {
+    var idProducto = $(this).attr("data-id")
     $.get("index.php", {
       action: "producto_id",
       id_producto: $(this).attr("data-id")
     }).done(function (data) {
       $("#mainContent").html(data);
-      $.ajax({
-        method:"GET",
-        dataType: "JSON",
-        url: "api/comentario/1",
-        success: function(data){
-          console.log(data);
-        }
-      });
+      getComentariosProducto(idProducto);
     });
   }
