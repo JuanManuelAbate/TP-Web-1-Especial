@@ -37,7 +37,11 @@ $("document").ready(function(){
     event.preventDefault();
     var rowToChange = $(this).closest('tr');
     $.post("index.php?action=usuario_admin_cambiar", {id_usuario: rowToChange.attr("data-id")}, function(data) {
-      rowToChange.children('td').eq(2).text("Si");
+      if (data === "1"){
+        rowToChange.children('td').eq(2).text("Si");
+      } else {
+        rowToChange.children('td').eq(2).text("No");
+      }
     });
   });
 
