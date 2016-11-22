@@ -34,7 +34,13 @@ class UsuarioView {
     $this->smarty->assign('tipo',$tipo);
     $this->smarty->display("header.tpl");
   }
-}
 
+  function adminUsuario($usuarios) {
+
+    $this->smarty->assign('usuarios',$usuarios);
+    $this->smarty->display("adminUsuario.tpl");
+  }
+
+}
 
  ?>
