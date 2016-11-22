@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-6 col-md-12 productos">
       {foreach from=$productos item=$producto}
-      <div class="text-center">
+      <div class="text-center" >
         {$producto.nombre_categoria|upper}
       </div>
       <div>{$producto.nombre|capitalize:true} <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
@@ -41,22 +41,24 @@
       {if ($logueado)}
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
-          <form id="comentarioForm">
-            <h2 class="text-center">Comentarios</h2>
-              <div class="form-group">
-                <input type="text" name="comentario" class="form-control" id="comentario" placeholder="Comentario...">
-              </div>
-              <div class="form-group">
-                <label for="categoriaProducto">Puntaje producto:
-                <select class="form-control">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select></label>
-              </div>
-              <input type="submit" class="btn btn-default center-block bold">
+          {foreach from=$productos item=$producto}
+          <form id="comentarioForm" data-id={$producto.id_producto}>
+          {/foreach}
+            <h2 class="text-center">Nuevo Comentario</h2>
+            <div class="form-group">
+              <input type="text" name="comentario" class="form-control" id="comentario" placeholder="Comentario...">
+            </div>
+            <div class="form-group">
+              <label for="puntaje">Categoria:</label>
+              <select name="puntaje" id="puntaje">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <input type="submit" class="btn btn-default center-block bold">
           </form>
         </div>
       </div>

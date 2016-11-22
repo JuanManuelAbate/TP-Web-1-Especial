@@ -46,7 +46,8 @@
   <script src="js/navegacion.js"></script>
   <!-- Usuario -->
   <script src="js/usuario.js"></script>
-
+  <!-- Comentarios -->
+  <script src="js/comentarios.js"></script>
 
 </body>
 </html>
