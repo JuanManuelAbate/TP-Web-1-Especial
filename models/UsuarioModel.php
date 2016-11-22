@@ -30,8 +30,11 @@ class UsuarioModel {
 
   function cambiarAdmin($idUsuario) {
 
-    $query = $this->db->prepare("update usuario set tipo_usuario = 1 where id_usuario=?");
+    $query = $this->db->prepare("UPDATE usuario SET tipo_usuario = NOT tipo_usuario where id_usuario =?");
     $query->execute(array($idUsuario));
+    $query = $this->db->prepare("SELECT * FROM usuario WHERE id_usuario=?");
+    $query->execute(array($idUsuario));
+    return $query->fetch(PDO::FETCH_ASSOC);
   }
 
 

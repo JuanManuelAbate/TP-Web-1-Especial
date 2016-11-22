@@ -50,7 +50,8 @@ class UsuarioController{
 
   function cambiarAdmin(){
 
-    $this->usuarioModel->cambiarAdmin($_POST['id_usuario']);
+    $usuario = $this->usuarioModel->cambiarAdmin($_POST['id_usuario']);
+    echo $usuario['tipo_usuario'];
   }
 
 }
