@@ -61,7 +61,8 @@
         <th class="thCenter" >Categoria</th>
         <th class="thCenter">Modificar</th>
         <th class="thCenter">Borrar Imagenes</th>
-        <th class="thCenter">Borrar</th>
+        <th class="thCenter">Borrar Comentarios</th>
+        <th class="thCenter">Borrar Producto</th>
       </thead>
       <tbody id="tableProductos">
         {foreach from=$productos item=$producto}
@@ -72,6 +73,7 @@
             <td data-id-categoria={$producto.fk_id_categoria}>{$producto.nombre_categoria|capitalize:true}</td>
             <td><button class="btn center-block updateProducto"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></button></td>
             <td><button class="btn center-block deleteProductoImagenes">Seleccionar</button></td>
+            <td><button class="btn center-block deleteProductoComentarios">Seleccionar</button></td>
             <td><button class="btn center-block deleteProducto"><span class="glyphicon glyphicon-trash" aria-hidden="true"></button></td>
           </tr>
         {/foreach}

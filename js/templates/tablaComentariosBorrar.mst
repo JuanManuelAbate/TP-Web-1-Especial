@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-12">
+    <table class="table text-center">
+      <thead>
+        <th class="text-center">id</th>
+        <th class="text-center">comentario</th>
+        <th class="text-center">puntaje</th>
+        <th class="text-center">borrar</th>
+      </thead>
+      <tbody>
+        {{#comentarios}}
+          <tr data-id={{id_comentario}}>
+            <td>{{id_comentario}}</td>
+            <td>{{comentario}}</td>
+            <td>{{puntaje}}</td>
+            <td><button class="btn center-block deleteComentario"><span class="glyphicon glyphicon-trash" aria-hidden="true"></button></td>
+          <tr>
+        {{/comentarios}}
+      </tbody>
+    <table>
+  </div>
+</div>
