@@ -70,4 +70,41 @@ $("document").ready(function(){
     });
   });
 
+  $("body").on("click", ".deleteProductoComentarios", function() {
+    event.preventDefault();
+    console.log("hola");
+    var productId = $(this).closest('tr').attr("data-id");
+    console.log(productId);
+    $.ajax({
+      method:"GET",
+      dataType: "JSON",
+      url: "api/comentario/" + productId,
+      success: function(data){
+        $.ajax({
+          url: 'js/templates/tablaComentariosBorrar.mst',
+          success: function(templateReceived) {
+            var rendered = Mustache.render(templateReceived,{comentarios : data});
+            console.log(rendered);
+            $("#mainContent").html(rendered);
+          }
+        });
+      }
+    });
+  });
+
+  $("body").on("click", ".deleteComentario", function() {
+    event.preventDefault();
+    console.log("comentario");
+    var rowToDelete = $(this).closest('tr');
+    $.ajax({
+      method:"DELETE",
+      dataType: "JSON",
+      url: "api/comentario/" + rowToDelete.attr("data-id"),
+      success: function(data){
+        rowToDelete.remove();
+      }
+    });
+  });
+
+
 });
