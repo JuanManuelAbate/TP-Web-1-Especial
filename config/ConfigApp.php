@@ -24,5 +24,8 @@
     public static $ACTION_LOGUEARME = 'loguearme';
     public static $ACTION_REGISTRARSE = "registrarse";
     public static $ACTION_USUARIO_REGISTRAR = 'usuario_registrar';
+
+    public static $ACTION_USUARIO_ADMIN = 'usuario_admin';
+    public static $ACTION_USUARIO_ADMIN_CAMBIAR = 'usuario_admin_cambiar';
   }
 ?>

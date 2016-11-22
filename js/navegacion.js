@@ -7,6 +7,7 @@
     $("body").on("click", "#productos", productos);
     $("body").on("click", "#adminCategorias", adminCategorias);
     $("body").on("click", "#adminProductos", adminProductos);
+    $("body").on("click", "#adminUsuarios", adminUsuarios);
     $("body").on("click", "#login", login);
     $("body").on("click", "#logout", logout);
     $("body").on("click", "#registrarse", registrarse);
@@ -107,5 +108,11 @@
     }).done(function (data) {
       $("#mainContent").html(data);
       getComentariosProducto(idProducto);
+    });
+  }
+
+  function adminUsuarios() {
+    $.get("index.php?action=usuario_admin", function(data) {
+      $("#mainContent").html(data);
     });
   }

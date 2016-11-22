@@ -50,8 +50,9 @@
 
         {if ($usuarioIn) && ($tipo)}
         <ul class="nav navbar-nav navbar-right">
-          <li class="navList"><a href="#" id="adminProductos">Administrador Productos |</a></li>
-          <li class="navList"><a href="#" id="adminCategorias">Administrador Categorias |</a></li>
+          <li class="navList"><a href="#" id="adminProductos">Administrador Productos</a></li>
+          <li class="navList"><a href="#" id="adminCategorias">Administrador Categorias</a></li>
+          <li class="navList"><a href="#" id="adminUsuarios">Usuarios</a></li>
         </ul>
         {/if}
 

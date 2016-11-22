@@ -89,6 +89,12 @@
     case ConfigApp::$ACTION_PRODUCTO_IMAGEN_ELIMINAR:
       $productoController->eliminarImagen();
       break;
+    case ConfigApp::$ACTION_USUARIO_ADMIN:
+      $usuarioController->adminUsuario();
+      break;
+    case ConfigApp::$ACTION_USUARIO_ADMIN_CAMBIAR:
+      $usuarioController->cambiarAdmin();
+      break;
 
     default:
       $usuarioController->main();

@@ -19,6 +19,10 @@ class UsuarioController{
       $this->usuarioView->main($usuarioIn);
     }
 
+  function adminUsuario() {
+
+    $this->usuarioView->adminUsuario($this->usuarioModel->getUsuarios());
+  }
 
 
   function registrarUsuarioForm() {
@@ -43,6 +47,12 @@ class UsuarioController{
       $this->usuarioView->mostrarMensaje("Ha ocurrido un error","danger");
     }
   }
+
+  function cambiarAdmin(){
+
+    $this->usuarioModel->cambiarAdmin($_POST['id_usuario']);
+  }
+
 }
 
 
