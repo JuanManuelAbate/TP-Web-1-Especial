@@ -49,7 +49,7 @@
               <input type="text" name="comentario" class="form-control" id="comentario" placeholder="Comentario...">
             </div>
             <div class="form-group">
-              <label for="puntaje">Categoria:</label>
+              <label for="puntaje">Puntaje:</label>
               <select name="puntaje" id="puntaje">
                 <option value="1">1</option>
                 <option value="2">2</option>

@@ -107,9 +107,11 @@
       id_producto: $(this).attr("data-id")
     }).done(function (data) {
       $("#mainContent").html(data);
-      getComentariosProducto(idProducto);
+      __idIntervalo = setInterval(getComentariosProducto, 2000, idProducto);
+
     });
   }
+
 
   function adminUsuarios() {
     $.get("index.php?action=usuario_admin", function(data) {
