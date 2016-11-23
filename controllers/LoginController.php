@@ -1,7 +1,7 @@
 <?php
-  require_once('views/LoginView.php');
-  require_once('models/UsuarioModel.php');
-  require_once('views/UsuarioView.php');
+  require_once(dirname(__DIR__).'/views/LoginView.php');
+  require_once(dirname(__DIR__).'/models/UsuarioModel.php');
+  require_once(dirname(__DIR__).'/views/UsuarioView.php');
 
   class LoginController {
 

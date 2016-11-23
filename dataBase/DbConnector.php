@@ -19,7 +19,7 @@
     function dbExists() {
 
       try {
-        new PDO('mysql:host='.$this->host.';dbname='.$this->dbName.';charset=utf8',$this->user,$this->password);
+        $objeto = new PDO('mysql:host='.$this->host.';dbname='.$this->dbName.';charset=utf8',$this->user,$this->password);
       } catch (Exception $e) {
         return false;
       }
