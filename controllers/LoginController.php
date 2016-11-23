@@ -44,16 +44,23 @@
         }
       }
 
-  /*
-    public function checkLogin(){
+    public function checkLogin() {
+
       session_start();
       if(!isset($_SESSION['USER'])){
         header("Location: index.php");
         die();
       };
     }
-    */
 
+    public function checkLoginAdmin() {
+
+      session_start();
+      if ((!isset($_SESSION['USER'])) || (!isset($_SESSION['TIPO'])) || ($_SESSION['TIPO'] != 1)) {
+        header("Location: index.php");
+        die();
+      }
+    }
 
     public function logout() {
 

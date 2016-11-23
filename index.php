@@ -23,8 +23,6 @@
   $categoriaController = new CategoriaController();
   $productoController = new ProductoController();
 
-// $loginController->checkLogin();
-
   if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
     $usuarioController->main();
     die();
@@ -44,25 +42,31 @@
     case ConfigApp::$ACTION_LOGUEARME:
       $loginController->loguear();
       break;
-      case ConfigApp::$ACTION_LOGOUT:
-        $loginController->logout();
-        break;
+    case ConfigApp::$ACTION_LOGOUT:
+      $loginController->logout();
+      break;
     case ConfigApp::$ACTION_CATEGORIA_CREAR:
+      $loginController->checkLoginAdmin();
       $categoriaController->createCategoria();
       break;
     case ConfigApp::$ACTION_CATEGORIA_ELIMINAR:
+      $loginController->checkLoginAdmin();
       $categoriaController->deleteCategoria();
       break;
     case ConfigApp::$ACTION_CATEGORIA_ADMIN:
+      $loginController->checkLoginAdmin();
       $categoriaController->adminCategoria();
       break;
     case ConfigApp::$ACTION_CATEGORIA_MODIFICAR:
+      $loginController->checkLoginAdmin();
       $categoriaController->updateCategoria();
       break;
     case ConfigApp::$ACTION_PRODUCTO_ADMIN:
+      $loginController->checkLoginAdmin();
       $productoController->adminProducto();
       break;
     case ConfigApp::$ACTION_PRODUCTO_CREAR:
+      $loginController->checkLoginAdmin();
       $productoController->createProducto();
       break;
     case ConfigApp::$ACTION_CATEGORIA:
@@ -75,24 +79,30 @@
       $productoController->productosPorCategoria();
       break;
     case ConfigApp::$ACTION_PRODUCTO_ELIMINAR;
+      $loginController->checkLoginAdmin();
       $productoController->deleteProducto();
       break;
     case ConfigApp::$ACTION_PRODUCTO_ID;
       $productoController->productoById();
       break;
     case ConfigApp::$ACTION_PRODUCTO_MODIFICAR:
+      $loginController->checkLoginAdmin();
       $productoController->updateProducto();
       break;
     case ConfigApp::$ACTION_PRODUCTO_ADMIN_IMAGENES:
+      $loginController->checkLoginAdmin();
       $productoController->adminProductoImagenes();
       break;
     case ConfigApp::$ACTION_PRODUCTO_IMAGEN_ELIMINAR:
+      $loginController->checkLoginAdmin();
       $productoController->eliminarImagen();
       break;
     case ConfigApp::$ACTION_USUARIO_ADMIN:
+      $loginController->checkLoginAdmin();
       $usuarioController->adminUsuario();
       break;
     case ConfigApp::$ACTION_USUARIO_ADMIN_CAMBIAR:
+      $loginController->checkLoginAdmin();
       $usuarioController->cambiarAdmin();
       break;
 
