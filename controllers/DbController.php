@@ -18,9 +18,9 @@
       return $this->dbConnector->dbExists();
     }
 
-    function createDatabase($host, $dbName, $user, $password) {
+    function createDatabase($host,$dbName,$user,$password) {
 
-      $this->dbConnector->createDatabase($host, $dbName, $user, $password);
+      $this->dbConnector->createDatabase($host,$dbName,$user,$password);
     }
 
     function newCredentials() {
@@ -29,4 +29,5 @@
     }
 
   }
+  
 ?>

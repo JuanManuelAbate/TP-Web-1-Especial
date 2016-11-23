@@ -12,7 +12,8 @@
       $this->model = new ComentarioModel();
     }
 
-    protected function comentario($argumentos){
+    protected function comentario($argumentos) {
+
       switch ($this->method) {
         case 'GET':
             if(count($argumentos)>0){
@@ -40,6 +41,7 @@
              return "Only accepts GET";
           break;
       }
-     }
+    }
   }
+
 ?>

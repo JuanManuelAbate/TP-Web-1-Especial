@@ -1,5 +1,7 @@
 <?php
+
   class ConfigApp {
+
     public static $ACTION = 'action';
     public static $ACTION_HOME = 'home';
 
@@ -27,5 +29,7 @@
 
     public static $ACTION_USUARIO_ADMIN = 'usuario_admin';
     public static $ACTION_USUARIO_ADMIN_CAMBIAR = 'usuario_admin_cambiar';
+    
   }
+
 ?>

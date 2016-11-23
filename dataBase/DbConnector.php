@@ -26,14 +26,14 @@
       return true;
     }
 
-    function createDatabase($host, $dbName, $user, $password) {
+    function createDatabase($host,$dbName,$user,$password) {
 
       $this->host = $host;
       $this->dbName = $dbName;
       $this->user = $user;
       $this->password = $password;
 
-      $this->updateCredentials($host, $dbName, $user, $password);
+      $this->updateCredentials($host,$dbName,$user,$password);
 
       $dbConnection = new PDO('mysql:host='.$this->host.';charset=utf8',$this->user,$this->password);
       $query = $dbConnection->prepare("CREATE DATABASE ".$this->dbName);
