@@ -22,17 +22,21 @@
 
     function createCategoria() {
 
-      $categoria = $this->categoriaModel->createCategoria($_POST['nombreCategoria']);
-      if ($categoria != false) {
-          $this->categoriaView->createCategoria($categoria);
-      } else {
-        echo "0";
+      if ((isset($_POST["nombreCategoria"]) && !empty($_POST["nombreCategoria"]))){
+        $categoria = $this->categoriaModel->createCategoria($_POST['nombreCategoria']);
+        if ($categoria != false) {
+            $this->categoriaView->createCategoria($categoria);
+        } else {
+          echo "0";
+        }
       }
     }
 
     function deleteCategoria() {
 
-      $this->categoriaModel->deleteCategoria($_POST['id_categoria']);
+      if ((isset($_POST["id_categoria"]) && !empty($_POST["id_categoria"]))){
+        $this->categoriaModel->deleteCategoria($_POST['id_categoria']);
+      }
     }
 
     function adminCategoria() {
@@ -43,7 +47,10 @@
 
     function updateCategoria() {
 
-      $this->categoriaModel->updateCategoria($_POST['id_categoria_update'],$_POST['nombre_categoria_update']);
+      if ((isset($_POST["id_categoria_update"]) && (isset($_POST["nombre_categoria_update"]) &&
+           !empty($_POST["id_categoria_update"]) && !empty($_POST["nombre_categoria_update"]) ))){
+        $this->categoriaModel->updateCategoria($_POST['id_categoria_update'],$_POST['nombre_categoria_update']);
+      }
     }
 
     function verCategorias() {

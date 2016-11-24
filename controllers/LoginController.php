@@ -21,7 +21,7 @@
 
     public function loguear() {
 
-      if(isset($_REQUEST['email']) && isset($_REQUEST['pass'])){
+      if(isset($_REQUEST['email']) && isset($_REQUEST['pass']) && !empty($_REQUEST["email"]) && !empty($_REQUEST["pass"])){
         $email = $_REQUEST['email'];
         $password = $_REQUEST['pass'];
         $existeUsuario = $this->usuarioModel->getUsuario($email);

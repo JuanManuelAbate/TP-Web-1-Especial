@@ -36,7 +36,14 @@
               (new LoginController)->checkLogin();
               if(count($argumentos)==0){
                 $error['Error'] = "El comentario no se creo";
-                $id_comentario = $this->model->createComentario($_POST['comentario'],$_POST['puntaje'],$_POST['id_producto']);
+                if ((isset($_POST["comentario"]) &&
+                     isset($_POST['puntaje']) &&
+                     isset($_POST['id_producto']) &&
+                     !empty($_POST["comentario"]) &&
+                     !empty($_POST["comentario"]) &&
+                     !empty($_POST["comentario"]))){
+                       $id_comentario = $this->model->createComentario($_POST['comentario'],$_POST['puntaje'],$_POST['id_producto']);
+                     }
                 return ($id_comentario > 0) ? $this->model->getComentario($id_comentario) : $error;
               }
             break;
