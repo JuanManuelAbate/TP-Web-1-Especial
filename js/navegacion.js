@@ -107,7 +107,7 @@
       id_producto: $(this).attr("data-id")
     }).done(function (data) {
       $("#mainContent").html(data);
-      __idIntervalo = setInterval(getComentariosProducto, 2000, idProducto);
+      setInterval(getComentariosProducto, 2000, idProducto);
 
     });
   }
