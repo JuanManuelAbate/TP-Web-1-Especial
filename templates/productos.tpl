@@ -8,7 +8,6 @@
           <th class="thLeft">Producto</th>
           <th class="thLeft">Descripcion</th>
           <th class="thLeft">Categoria</th>
-
         </thead>
         <tbody>
           {foreach from=$productos item=$producto}
@@ -17,8 +16,6 @@
             <td><a href="#" class="verItem" data-id={$producto.id_producto}>{$producto.nombre|capitalize:true}</a></td>
             <td>{$producto.descripcion}</td>
             <td>{$producto.nombre_categoria|capitalize:true}</td>
-
-
           </tr>
           {/foreach}
         </tbody>

@@ -9,13 +9,15 @@
   $dbController = new DbController();
 
   if (!$dbController->dbExists()) {
-    if (isset($_POST["host"]) && isset($_POST['dbName']) && isset($_POST['user']) && isset($_POST['password'])){
+    if (isset($_POST["host"]) && isset($_POST['dbName']) && isset($_POST['user']) && isset($_POST['password']) &&
+     !empty($_POST["host"]) && !empty($_POST['dbName']) && !empty($_POST['user'])){
       $dbController->createDatabase($_POST['host'],$_POST['dbName'],$_POST['user'],$_POST['password']);
       die();
-    } else {
+      }
+      else {
         $dbController->newCredentials();
         die();
-    }
+      }
   }
 
   $loginController = new LoginController();

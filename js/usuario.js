@@ -27,8 +27,14 @@ $("document").ready(function(){
       cache: false,
       processData:false,
       success: function(data){
+        if (data === "0") {
+          $(".errorLogin").show();
+        }
+        else {
           $("header").html(data);
           home();
+        }
+
       }
     });
   });

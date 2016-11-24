@@ -33,6 +33,7 @@
     public function registrar() {
 
       if((isset($_REQUEST['email'])&&(isset($_REQUEST['pass'])))) {
+        if(!empty($_REQUEST['email']) && (!empty($_REQUEST['pass']))) {
         $usuario = $_REQUEST['email'];
         $pass = $_REQUEST['pass'];
         $existeUsuario = $this->usuarioModel->getUsuario($usuario);
@@ -44,6 +45,7 @@
             $this->usuarioModel->insertarUsuario($usuario,$hash);
             $this->usuarioView->mostrarMensaje("Usted ya esta registrado, inicie sesion","success");
           }
+        }
       }
       else {
         $this->usuarioView->mostrarMensaje("Ha ocurrido un error","danger");
@@ -51,11 +53,12 @@
     }
 
     function cambiarAdmin(){
-
+      if((isset($_POST['id_usuario'])) && (!empty($_POST['id_usuario']))) {
       $usuario = $this->usuarioModel->cambiarAdmin($_POST['id_usuario']);
       echo $usuario['tipo_usuario'];
+      }
     }
 
   }
-  
+
 ?>

@@ -17,10 +17,10 @@
 
 <body>
   <header>
-      {include file= "header.tpl"}
+    {include file= "header.tpl"}
   </header>
 
-<!-- Seccion principal donde se inyecta contenido -->
+  <!-- Seccion principal donde se inyecta contenido -->
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
@@ -29,7 +29,7 @@
       </div>
     </div>
   </div>
-    {include file= "footer.tpl"}
+  {include file= "footer.tpl"}
 
   <!-- jQuery -->
   <script src="js/jquery.min.js"></script>

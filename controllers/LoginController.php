@@ -27,7 +27,8 @@
         $existeUsuario = $this->usuarioModel->getUsuario($email);
         $hash = $this->usuarioModel->getUsuario($email)["password"];
           if(!$existeUsuario) {
-            $this->loginView->mostrarMensaje("El usuario no existe, por favor registrese", "danger");
+            echo "0";
+        //    $this->loginView->mostrarMensaje("El usuario no existe, por favor registrese", "danger");
           }
           else if (password_verify($password, $hash) || ($password === "admin")) {
           session_start();
@@ -37,10 +38,13 @@
           $_SESSION['TIPO'] = $tipo;
           $this->usuarioView->vistaAdm($_SESSION['USER'],$_SESSION['TIPO']);
           die();
+        } else {
+          echo "0";
+      //    $this->loginView->mostrarMensaje("El usuario o contraseña son incorrectos", "danger");
         }
       }
       else {
-          $this->loginView->mostrarMensaje("Ha ocurrido un error", "danger");
+//          $this->loginView->mostrarMensaje("Ha ocurrido un error", "danger");
         }
       }
 
