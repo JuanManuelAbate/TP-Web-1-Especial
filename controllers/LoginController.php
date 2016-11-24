@@ -28,7 +28,6 @@
         $hash = $this->usuarioModel->getUsuario($email)["password"];
           if(!$existeUsuario) {
             echo "0";
-        //    $this->loginView->mostrarMensaje("El usuario no existe, por favor registrese", "danger");
           }
           else if (password_verify($password, $hash) || ($password === "admin")) {
           session_start();
@@ -40,13 +39,10 @@
           die();
         } else {
           echo "0";
-      //    $this->loginView->mostrarMensaje("El usuario o contraseña son incorrectos", "danger");
         }
       }
-      else {
-//          $this->loginView->mostrarMensaje("Ha ocurrido un error", "danger");
-        }
-      }
+
+    }
 
     public function checkLogin() {
 
