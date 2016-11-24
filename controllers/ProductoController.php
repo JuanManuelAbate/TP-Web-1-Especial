@@ -22,13 +22,17 @@
 
     function createProducto() {
 
-      $producto = $this->productoModel->createProducto($_POST['nombreProducto'], $_POST['descripcionProducto'], $_POST['categoriaProducto'],$_FILES['imagenesProducto']);
-      $this->productoView->createProducto($producto);
+      if (isset($_POST['nombreProducto']) && isset($_POST['descripcionProducto']) && isset($_POST['categoriaProducto']) && !empty($_POST['nombreProducto']) && !empty($_POST['descripcionProducto']) && !empty($_POST['categoriaProducto'])){
+        $producto = $this->productoModel->createProducto($_POST['nombreProducto'], $_POST['descripcionProducto'], $_POST['categoriaProducto'],$_FILES['imagenesProducto']);
+        $this->productoView->createProducto($producto);
+      }
     }
 
     function deleteProducto() {
 
-      $this->productoModel->deleteProducto($_POST['id_producto']);
+      if (isset($_POST['id_producto']) && !empty($_POST['id_producto'])) {
+        $this->productoModel->deleteProducto($_POST['id_producto']);
+      }
     }
 
     function verProductos() {
@@ -40,29 +44,37 @@
 
     function productosPorCategoria() {
 
-      $productosPorCat = $this->productoModel->getProductoPorCategoria($_GET['id_categoria']);
-      $this->productoView->verProductoPorCategoria($productosPorCat);
+      if (isset($_GET['id_categoria']) && !empty($_GET['id_categoria'])) {
+        $productosPorCat = $this->productoModel->getProductoPorCategoria($_GET['id_categoria']);
+        $this->productoView->verProductoPorCategoria($productosPorCat);
+      }
     }
 
     function productoById() {
 
-      session_start();
-      $productos = $this->productoModel->getProductoById($_GET['id_producto']);
-      $logueado= false;
-      if(isset($_SESSION['USER'])){
-        $logueado = true;
+      if (isset($_GET['id_producto']) && !empty($_GET['id_producto'])) {
+        session_start();
+        $productos = $this->productoModel->getProductoById($_GET['id_producto']);
+        $logueado= false;
+        if(isset($_SESSION['USER'])){
+          $logueado = true;
+        }
+        $this->productoView->verProductosConImg($productos, $logueado);
       }
-      $this->productoView->verProductosConImg($productos, $logueado);
     }
 
     function updateProducto() {
 
-      $this->productoModel->updateProducto($_POST['updateIdProducto'], $_POST['updateNombreProducto'], $_POST['updateDescripcionProducto'], $_POST['updateCategoriaProducto'], $_FILES['updateImagenesProducto']);
+      if (isset($_POST['updateIdProducto']) && isset($_POST['updateNombreProducto']) && isset($_POST['updateDescripcionProducto']) && isset($_POST['updateCategoriaProducto']) && !empty($_POST['updateIdProducto']) && !empty($_POST['updateNombreProducto']) && !empty($_POST['updateDescripcionProducto']) && !empty($_POST['updateCategoriaProducto'])) {
+        $this->productoModel->updateProducto($_POST['updateIdProducto'], $_POST['updateNombreProducto'], $_POST['updateDescripcionProducto'], $_POST['updateCategoriaProducto'], $_FILES['updateImagenesProducto']);
+      }
     }
 
     function adminProductoImagenes() {
 
-      $this->productoView->adminProductoImagenes($this->productoModel->getImagenesProducto($_GET['id_producto']));
+      if (isset($_GET['id_producto']) && !empty($_GET['id_producto'])) {
+        $this->productoView->adminProductoImagenes($this->productoModel->getImagenesProducto($_GET['id_producto']));
+      }
     }
 
     function eliminarImagen() {

@@ -38,6 +38,8 @@
   <!-- Mustache -->
   <script src="js/mustache.min.js"></script>
   <!-- JS propio -->
+  <!-- Comentarios -->
+  <script src="js/comentarios.js"></script>
   <!-- Categoria Admin -->
   <script src="js/adminCategorias.js"></script>
   <!-- Producto Admin -->
@@ -46,8 +48,7 @@
   <script src="js/navegacion.js"></script>
   <!-- Usuario -->
   <script src="js/usuario.js"></script>
-  <!-- Comentarios -->
-  <script src="js/comentarios.js"></script>
+
 
 </body>
 </html>

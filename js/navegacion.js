@@ -85,23 +85,6 @@ var idInterval = null;
     });
   }
 
-  function getComentariosProducto(idProducto) {
-    $.ajax({
-      method:"GET",
-      dataType: "JSON",
-      url: "api/comentario/" + idProducto,
-      success: function(data){
-        $.ajax({
-          url: 'js/templates/tablaComentarios.mst',
-          success: function(templateReceived) {
-            var rendered = Mustache.render(templateReceived,{comentarios : data});
-            $("#tablaComentarios").html(rendered);
-          }
-        });
-      }
-    });
-  }
-
   function verItem() {
 
     var idProducto = $(this).attr("data-id")
@@ -117,7 +100,6 @@ var idInterval = null;
     
     });
   }
-
 
   function adminUsuarios() {
     $.get("index.php?action=usuario_admin", function(data) {
