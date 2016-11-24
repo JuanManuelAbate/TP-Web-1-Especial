@@ -1,6 +1,7 @@
 <?php
   require_once('api.php');
   require_once('../models/ComentarioModel.php');
+  require_once('../controllers/LoginController.php');
 
   class ComentarioApi extends Api {
 
@@ -12,7 +13,8 @@
       $this->model = new ComentarioModel();
     }
 
-    protected function comentario($argumentos){
+    protected function comentario($argumentos) {
+
       switch ($this->method) {
         case 'GET':
             if(count($argumentos)>0){
@@ -22,6 +24,7 @@
             }
           break;
         case 'DELETE':
+            (new LoginController)->checkLoginAdmin();
             if(count($argumentos)>0){
               $error['Error'] = "El comentario no existe";
               $success['Success'] = "El comentario se borro";
@@ -30,6 +33,7 @@
             }
           break;
           case 'POST':
+              (new LoginController)->checkLogin();
               if(count($argumentos)==0){
                 $error['Error'] = "El comentario no se creo";
                 $id_comentario = $this->model->createComentario($_POST['comentario'],$_POST['puntaje'],$_POST['id_producto']);
@@ -40,6 +44,7 @@
              return "Only accepts GET";
           break;
       }
-     }
+    }
   }
+
 ?>

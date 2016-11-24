@@ -6,11 +6,12 @@
   </head>
   <body>
 
+    <h1>Credenciales para la base de datos</h1>
     <form id="newCredentials">
-      <input type="text" name="host" required="true">
-      <input type="text" name="dbName" required="true">
-      <input type="text" name="user" required="true">
-      <input type="text" name="password">
+      <input type="text" name="host" required="true" placeholder="host">
+      <input type="text" name="dbName" required="true" placeholder="Nombre DB">
+      <input type="text" name="user" required="true" placeholder="usuario">
+      <input type="text" name="password" placeholder="password">
       <input type="submit">
     </form>
 

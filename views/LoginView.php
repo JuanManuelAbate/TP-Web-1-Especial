@@ -1,35 +1,32 @@
 <?php
-require_once('libs/Smarty.class.php');
+  require_once(dirname(__DIR__).'/libs/Smarty.class.php');
 
-class LoginView {
+  class LoginView {
 
-  private $smarty;
+    private $smarty;
 
-  function __construct() {
+    function __construct() {
 
-    $this->smarty = new Smarty();
+      $this->smarty = new Smarty();
+    }
+
+    function loguearUsuarioForm() {
+
+      $this->smarty->display('login.tpl');
+    }
+
+    function mostrarMensaje($mensaje,$color){
+
+      $this->smarty->assign("mensaje", $mensaje);
+      $this->smarty->assign("color", $color);
+      $this->loguearUsuarioForm();
+    }
+
+    function home() {
+
+      $this->smarty->display('queEsAp.tpl');
+    }
 
   }
 
-  function loguearUsuarioForm(){
-    $this->smarty->display('login.tpl');
-  }
-
-  function mostrarMensaje($mensaje, $color){
-    $this->smarty->assign("mensaje", $mensaje);
-    $this->smarty->assign("color", $color);
-    $this->loguearUsuarioForm();
-  }
-
-  function home() {
-    $this->smarty->display('queEsAp.tpl');
-  }
-
-
-
-
-}
-
-
-
- ?>
+?>
