@@ -34,9 +34,6 @@ p.tienda {
   padding: 10px;
 }
 
-.thCenter {
-  text-align: center;
-}
 
 .updateCategoria, .deleteCategoria, .deleteProducto, .updateProducto {
   background-color: rgba(173, 241, 7, 0.6);

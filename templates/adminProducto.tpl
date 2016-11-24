@@ -12,7 +12,7 @@
         <label for="categoriaProducto">Categoria:</label>
         <select name="categoriaProducto" id="categoriaProducto">
           {foreach from=$categorias item=$categoria}
-            <option value={$categoria.id_categoria}>{$categoria.nombre|capitalize:true}</option>
+          <option value={$categoria.id_categoria}>{$categoria.nombre|capitalize:true}</option>
           {/foreach}
         </select>
       </div>
@@ -39,7 +39,7 @@
         <label for="updateCategoriaProducto">Nueva Categoria:</label>
         <select name="updateCategoriaProducto" id="updateCategoriaProducto">
           {foreach from=$categorias item=$categoria}
-            <option value={$categoria.id_categoria}>{$categoria.nombre}</option>
+          <option value={$categoria.id_categoria}>{$categoria.nombre}</option>
           {/foreach}
         </select>
       </div>
@@ -55,27 +55,27 @@
   <div class="col-md-12">
     <table class="table table-responsive text-center">
       <thead>
-        <th class="thCenter">ID</th>
-        <th class="thCenter">Nombre</th>
-        <th class="thCenter">Descripcion</th>
-        <th class="thCenter" >Categoria</th>
-        <th class="thCenter">Modificar</th>
-        <th class="thCenter">Borrar Imagenes</th>
-        <th class="thCenter">Borrar Comentarios</th>
-        <th class="thCenter">Borrar Producto</th>
+        <th class="text-center">ID</th>
+        <th class="text-center">Nombre</th>
+        <th class="text-center">Descripcion</th>
+        <th class="text-center" >Categoria</th>
+        <th class="text-center">Modificar</th>
+        <th class="text-center">Borrar Imagenes</th>
+        <th class="text-center">Borrar Comentarios</th>
+        <th class="text-center">Borrar Producto</th>
       </thead>
       <tbody id="tableProductos">
         {foreach from=$productos item=$producto}
-          <tr data-id={$producto.id_producto}>
-            <td>{$producto.id_producto}</td>
-            <td>{$producto.nombre|capitalize:true}</td>
-            <td>{$producto.descripcion}</td>
-            <td data-id-categoria={$producto.fk_id_categoria}>{$producto.nombre_categoria|capitalize:true}</td>
-            <td><button class="btn center-block updateProducto"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></button></td>
-            <td><button class="btn center-block deleteProductoImagenes">Seleccionar</button></td>
-            <td><button class="btn center-block deleteProductoComentarios">Seleccionar</button></td>
-            <td><button class="btn center-block deleteProducto"><span class="glyphicon glyphicon-trash" aria-hidden="true"></button></td>
-          </tr>
+        <tr data-id={$producto.id_producto}>
+          <td>{$producto.id_producto}</td>
+          <td>{$producto.nombre|capitalize:true}</td>
+          <td>{$producto.descripcion}</td>
+          <td data-id-categoria={$producto.fk_id_categoria}>{$producto.nombre_categoria|capitalize:true}</td>
+          <td><button class="btn center-block updateProducto"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></button></td>
+          <td><button class="btn center-block deleteProductoImagenes">Seleccionar</button></td>
+          <td><button class="btn center-block deleteProductoComentarios">Seleccionar</button></td>
+          <td><button class="btn center-block deleteProducto"><span class="glyphicon glyphicon-trash" aria-hidden="true"></button></td>
+        </tr>
         {/foreach}
       </tbody>
     </table>

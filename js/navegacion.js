@@ -1,3 +1,5 @@
+var idInterval = null;
+
   $("document").ready(function () {
     home();
     $("body").on("click", "#logo", logo);
@@ -101,14 +103,18 @@
   }
 
   function verItem() {
+
     var idProducto = $(this).attr("data-id")
     $.get("index.php", {
       action: "producto_id",
       id_producto: $(this).attr("data-id")
     }).done(function (data) {
       $("#mainContent").html(data);
-      setInterval(getComentariosProducto, 2000, idProducto);
-
+      if(idInterval){
+        clearInterval(idInterval);
+      }
+      idInterval = setInterval(getComentariosProducto, 2000, idProducto);
+    
     });
   }
 

@@ -1,3 +1,8 @@
+<div class="row errorLogin" hidden>
+  <div class="col-md-12 bg-danger">
+    <h1> Usuario o contraseña incorrectos</h1>
+  </div>
+</div>
   <div class="row">
     <div class="col-md-8">
       {if isset($mensaje)}
